@@ -1,0 +1,88 @@
+{
+    "navbar": {
+        "home": "Home",
+        "projects": "Projects",
+        "skills": "Skills",
+        "contact": "Contact"
+    },
+    "hero": {
+        "available": "Available for new projects",
+        "building": "Building",
+        "experiences": "experiences",
+        "digital": "digital.",
+        "description": "I am a Full Stack Developer passionate about creating clean, efficient, and user-centered applications. Specialized in modern web technologies and Clean Architecture.",
+        "talk": "Let's Talk",
+        "work": "View Work",
+        "download_cv": "Download CV"
+    },
+    "skills_section": {
+        "about_me": "About Me",
+        "title_part1": "Full Stack Developer with a",
+        "title_part2": "design vision",
+        "bio1": "Although I have solid Full Stack knowledge, my true strength and passion lies in <1>Front End</1>. I specialize in creating intuitive and performant interfaces that connect with users.",
+        "bio2": "I have worked extensively with modern ecosystems like <1>React, React Native, Vue, and Electron</1>. Additionally, my design background includes mastery of <3>Figma</3> and a UX/UI certification completed in 2019, allowing me to bridge the gap between design and code.",
+        "tech_skills": "Technical Skills",
+        "certified": "Certified",
+        "certificates": [
+            "UX/UI Design - Udemy (2019)",
+            "Scrum Master Certified - Scrum.org (2020)",
+            "AWS Certified Cloud Practitioner (2021)",
+            "Full Stack Web Development Bootcamp (2018)",
+            "JavaScript Algorithms and Data Structures - freeCodeCamp"
+        ]
+    },
+    "timeline_section": {
+        "title": "Career Path",
+        "subtitle": "Git Log",
+        "description": "A journey through my professional evolution, visualized as a commit history."
+    },
+    "projects_section": {
+        "title_small": "Portfolio",
+        "title_large": "Featured Projects",
+        "description": "A selection of my most recent work, applying development best practices and modern design.",
+        "all_filter": "All",
+        "empty": "No projects with this technology."
+    },
+    "data": {
+        "career": {
+            "1": {
+                "title": "Frontend Developer Specialist",
+                "description": "Started working with Laravel on backend, but my passion and skill for frontend led me to lead initiatives in the frontend team. Currently focused on modern architectures and UX optimization."
+            },
+            "2": {
+                "title": "Freelance Frontend Developer",
+                "description": "Development of e-commerce platform in remote collaboration with a team in Panama. Complete implementation of purchasing flow and catalog."
+            },
+            "3": {
+                "title": "Full Stack Developer",
+                "description": "Development of enterprise solutions using a diverse stack. Worked on maintenance and new features for corporate clients."
+            },
+            "4": {
+                "title": "Web Developer",
+                "description": "Development of a comprehensive Call Center management system. Focused efforts on system stability and real-time reporting."
+            },
+            "5": {
+                "title": "Freelance Wordpress Developer",
+                "description": "Start of my professional career creating custom solutions and themes for WordPress."
+            },
+            "6": {
+                "title": "University Graduation",
+                "description": "Obtained professional degree, marking the beginning of my career in software development."
+            }
+        },
+        "projects": {
+            "1": {
+                "title": "Modern E-commerce",
+                "description": "A complete e-commerce platform with shopping cart, payments, and admin panel."
+            },
+            "2": {
+                "title": "Task Management App",
+                "description": "Productivity application to manage personal and team tasks with real-time updates."
+            },
+            "3": {
+                "title": "Finance Dashboard",
+                "description": "Financial data visualization with interactive charts and detailed reports."
+            }
+        }
+    }
+}
