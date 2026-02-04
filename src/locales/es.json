@@ -1,0 +1,88 @@
+{
+    "navbar": {
+        "home": "Inicio",
+        "projects": "Proyectos",
+        "skills": "Habilidades",
+        "contact": "Contacto"
+    },
+    "hero": {
+        "available": "Disponible para nuevos proyectos",
+        "building": "Construyendo",
+        "experiences": "experiencias",
+        "digital": "digitales.",
+        "description": "Soy un Desarrollador Full Stack apasionado por crear aplicaciones limpias, eficientes y centradas en el usuario. Especializado en tecnologías web modernas y Arquitectura Limpia.",
+        "talk": "Hablemos",
+        "work": "Ver Trabajo",
+        "download_cv": "Descargar CV"
+    },
+    "skills_section": {
+        "about_me": "Sobre Mí",
+        "title_part1": "Desarrollador Full Stack con",
+        "title_part2": "visión de diseño",
+        "bio1": "Aunque tengo sólidos conocimientos como Full Stack, mi verdadera fortaleza y pasión reside en el <1>Front End</1>. Me especializo en crear interfaces intuitivas y performantes que conectan con los usuarios.",
+        "bio2": "He trabajado extensamente con ecosistemas modernos como <1>React, React Native, Vue y Electron</1>. Además, mi background en diseño incluye el dominio de <3>Figma</3> y una certificación en UX/UI completada en 2019, lo que me permite cerrar la brecha entre el diseño y el código.",
+        "tech_skills": "Habilidades Técnicas",
+        "certified": "Certificado",
+        "certificates": [
+            "UX/UI Design - Udemy (2019)",
+            "Scrum Master Certified - Scrum.org (2020)",
+            "AWS Certified Cloud Practitioner (2021)",
+            "Full Stack Web Development Bootcamp (2018)",
+            "JavaScript Algorithms and Data Structures - freeCodeCamp"
+        ]
+    },
+    "timeline_section": {
+        "title": "Trayectoria",
+        "subtitle": "Git Log",
+        "description": "Un recorrido por mi evolución profesional, visualizado como un historial de commits."
+    },
+    "projects_section": {
+        "title_small": "Portfolio",
+        "title_large": "Proyectos Destacados",
+        "description": "Una selección de mis trabajos más recientes, donde aplico las mejores prácticas de desarrollo y diseño moderno.",
+        "all_filter": "Todos",
+        "empty": "No hay proyectos con esta tecnología."
+    },
+    "data": {
+        "career": {
+            "1": {
+                "title": "Frontend Developer Specialist",
+                "description": "Comencé trabajando con Laravel en backend, pero mi pasión y habilidad por el frontend me llevaron a liderar iniciativas en el equipo de frontend. Actualmente enfocado en arquitecturas modernas y optimización de UX."
+            },
+            "2": {
+                "title": "Freelance Frontend Developer",
+                "description": "Desarrollo de plataforma e-commerce en colaboración remota con un equipo en Panamá. Implementación completa del flujo de compras y catálogo."
+            },
+            "3": {
+                "title": "Full Stack Developer",
+                "description": "Desarrollo de soluciones empresariales utilizando un stack diverso. Trabajé en mantenimiento y nuevas funcionalidades para clientes corporativos."
+            },
+            "4": {
+                "title": "Web Developer",
+                "description": "Desarrollo de un sistema integral para gestión de Call Center. Enfilé esfuerzos en la estabilidad del sistema y reportes en tiempo real."
+            },
+            "5": {
+                "title": "Freelance Wordpress Developer",
+                "description": "Inicio de mi carrera profesional creando soluciones personalizadas y temas para WordPress."
+            },
+            "6": {
+                "title": "Graduación Universitaria",
+                "description": "Obtención del título profesional, marcando el inicio de mi carrera en el desarrollo de software."
+            }
+        },
+        "projects": {
+            "1": {
+                "title": "E-commerce Moderno",
+                "description": "Una plataforma de comercio electrónico completa con carrito de compras, pagos y panel de administración."
+            },
+            "2": {
+                "title": "App de Gestión de Tareas",
+                "description": "Aplicación de productividad para gestionar tareas personales y de equipo con actualizaciones en tiempo real."
+            },
+            "3": {
+                "title": "Dashboard de Finanzas",
+                "description": "Visualización de datos financieros con gráficos interactivos y reportes detallados."
+            }
+        }
+    }
+}
