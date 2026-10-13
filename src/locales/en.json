@@ -3,85 +3,119 @@
         "home": "Home",
         "projects": "Projects",
         "skills": "Skills",
+        "books": "Reading Club",
         "contact": "Contact"
     },
     "hero": {
-        "available": "Available for new projects",
-        "building": "Building",
-        "experiences": "experiences",
-        "digital": "digital.",
-        "description": "I am a Full Stack Developer passionate about creating clean, efficient, and user-centered applications. Specialized in modern web technologies and Clean Architecture.",
-        "talk": "Let's Talk",
-        "work": "View Work",
-        "download_cv": "Download CV"
+        "available": "Available for new technical leadership challenges",
+        "greeting": "Hi, I'm Luis Peña 👋",
+        "building": "Engineering",
+        "experiences": "mission-critical systems",
+        "digital": "with resilient architecture.",
+        "description": "Frontend Tech Lead with 11+ years of experience in high-demand operations. Before diving into titles or biographies, I prefer to let the work speak for itself: key systems engineered for 12+ countries.",
+        "talk": "Let's Connect",
+        "work": "Explore my work first ↓",
+        "download_cv": "Download Resume (PDF)",
+        "generating_cv": "Generating Resume..."
+    },
+    "story": {
+        "bridge_1": {
+            "title": "The Work Speaks First",
+            "quote": "Before talking about titles or background, I'd rather show you what I've engineered. In international logistics, a bug grounds flights and halts warehouses. Here are the mission-critical systems I've led in production:"
+        },
+        "bridge_2": {
+            "title": "Mindset Over Syntax",
+            "quote": "Building software for 12+ countries isn't achieved by copying syntax. In the era of generative AI, true engineering value lies in domain isolation, managing complexity, and designing resilient Clean Architectures that withstand time."
+        },
+        "bridge_3": {
+            "title": "The Journey & Skills",
+            "quote": "Now that you've seen what I build and how I think, here is the journey that brought me here: over a decade of continuous evolution since my first independent projects in 2013."
+        },
+        "bridge_4": {
+            "title": "Let's Connect",
+            "quote": "If you need someone to lead technical architecture, mentor your engineers, and bridge Figma prototypes into resilient production code... let's talk."
+        }
     },
     "skills_section": {
-        "about_me": "About Me",
-        "title_part1": "Full Stack Developer with a",
-        "title_part2": "design vision",
-        "bio1": "Although I have solid Full Stack knowledge, my true strength and passion lies in <1>Front End</1>. I specialize in creating intuitive and performant interfaces that connect with users.",
-        "bio2": "I have worked extensively with modern ecosystems like <1>React, React Native, Vue, and Electron</1>. Additionally, my design background includes mastery of <3>Figma</3> and a UX/UI certification completed in 2019, allowing me to bridge the gap between design and code.",
+        "about_me": "About Me & Skills",
+        "title_part1": "Frontend Lead with an",
+        "title_part2": "architectural and resilience vision",
+        "bio1": "With over a decade in software engineering, I specialize in <1>Frontend Architecture</1> and building mission-critical systems where high throughput and operational stability are paramount.",
+        "bio2": "I lead engineering teams championing <1>Clean Architecture and Atomic Design</1> to eliminate production regressions. Extensive experience integrating industrial hardware (volumetric scales, thermal label printers, Honeywell PDA devices) and real-time WebSockets. Certified in UX/UI with advanced <3>Figma</3> mastery to bridge design prototypes with robust production code.",
         "tech_skills": "Technical Skills",
         "certified": "Certified",
         "certificates": [
-            "UX/UI Design - Udemy (2019)",
-            "Scrum Master Certified - Scrum.org (2020)",
-            "AWS Certified Cloud Practitioner (2021)",
-            "Full Stack Web Development Bootcamp (2018)",
-            "JavaScript Algorithms and Data Structures - freeCodeCamp"
+            "Professional UX/UI Design - Acámica (2019)",
+            "Vue.js Professional & Basics - Platzi (2018)",
+            "Design Patterns for Software - Udemy (2018)",
+            "App Development - Universidad Complutense de Madrid (2015)",
+            "Video Game Gamification - European University (2014)"
         ]
     },
     "timeline_section": {
         "title": "Career Path",
         "subtitle": "Git Log",
-        "description": "A journey through my professional evolution, visualized as a commit history."
+        "description": "Continuous engineering journey since late 2013: freelance beginnings, enterprise systems development, and Frontend Tech Lead in international logistics."
     },
     "projects_section": {
-        "title_small": "Portfolio",
-        "title_large": "Featured Projects",
-        "description": "A selection of my most recent work, applying development best practices and modern design.",
+        "title_small": "Case Studies",
+        "title_large": "Featured Engineering Systems",
+        "description": "Production systems built for high-demand operational, logistics, and e-commerce environments.",
         "all_filter": "All",
         "empty": "No projects with this technology."
+    },
+    "books_section": {
+        "title_small": "Foundations & Critical Thinking",
+        "title_large": "Reading Club / Core Books",
+        "description": "In the era of AI-generated code, syntax is trivial: true engineering value lies in deep mastery of software design principles, architecture, and complexity management."
     },
     "data": {
         "career": {
             "1": {
-                "title": "Frontend Developer Specialist",
-                "description": "Started working with Laravel on backend, but my passion and skill for frontend led me to lead initiatives in the frontend team. Currently focused on modern architectures and UX optimization."
+                "title": "Tech Lead Frontend & Specialist",
+                "description": "Frontend technical leadership for Mailamericas. Architectural direction for warehouse systems operating across 12+ countries (Fulfillment Desktop/Web, Honeywell industrial PDAs, automated Sorting machinery, and Correos App / MaGo). Pioneered adoption of Clean Architecture and modular Atomic Design to eradicate production regressions. Mentorship and rigorous code reviews."
             },
             "2": {
-                "title": "Freelance Frontend Developer",
-                "description": "Development of e-commerce platform in remote collaboration with a team in Panama. Complete implementation of purchasing flow and catalog."
+                "title": "Senior Frontend Developer (Contractor)",
+                "description": "End-to-end development of a multi-store e-commerce platform as an independent contractor in Panama. Engineered a reactive conditional filter engine for high-traffic campaigns (Black Friday), Vuex global state management, and direct automated order dispatch to WhatsApp."
             },
             "3": {
-                "title": "Full Stack Developer",
-                "description": "Development of enterprise solutions using a diverse stack. Worked on maintenance and new features for corporate clients."
+                "title": "Semi-Senior Full Stack Developer",
+                "description": "Development of corporate enterprise solutions. Built horse racing and betting platform with Python/Django, solved mission-critical real-time ticket printing under demo deadlines, and maintained Java, AngularJS, and Laravel services."
             },
             "4": {
-                "title": "Web Developer",
-                "description": "Development of a comprehensive Call Center management system. Focused efforts on system stability and real-time reporting."
+                "title": "Frontend Developer (Freelance)",
+                "description": "Contractor development and integration of the authentication and user management module in Angular and Laravel deployed on Heroku."
             },
             "5": {
-                "title": "Freelance Wordpress Developer",
-                "description": "Start of my professional career creating custom solutions and themes for WordPress."
+                "title": "Web Programmer Analyst & PHP",
+                "description": "Engineering of an operations management platform for debt recovery Call Centers. Real-time operator monitoring, analytical calling metrics dashboard, and executive reporting."
             },
             "6": {
-                "title": "University Graduation",
-                "description": "Obtained professional degree, marking the beginning of my career in software development."
+                "title": "Web / WordPress Developer",
+                "description": "Launched professional career in late 2013 crafting custom web solutions, bespoke plugins, and frontend/backend integration for commercial clients."
+            },
+            "7": {
+                "title": "Software Engineering & Associate Degree",
+                "description": "Earned Associate Degree in Computer Science in 2013 followed by Bachelor of Science in Software Engineering in 2017, establishing solid foundations in algorithms, data structures, and software architecture."
             }
         },
         "projects": {
             "1": {
-                "title": "Modern E-commerce",
-                "description": "A complete e-commerce platform with shopping cart, payments, and admin panel."
+                "title": "Fulfillment Warehouse Logistics Suite",
+                "description": "Mission-critical desktop and web suite for Mailamericas warehouses in 12+ countries (Argentina, Peru, Jamaica, Seychelles, etc.). High-volume parcel routing (sacks carrying up to 3,000 packages), volumetric scale weighing, WebSockets, and industrial thermal label printing with QueBeu. Clean Architecture and Atomic Design."
             },
             "2": {
-                "title": "Task Management App",
-                "description": "Productivity application to manage personal and team tasks with real-time updates."
+                "title": "Fulfillment PDA & Mobile Logistics",
+                "description": "Industrial React Native mobile app deployed to Honeywell rugged warehouse PDAs. Laser scanning of barcode/QR codes on sacks, containers, and packages in real-time, syncing critical warehouse inventory operations with core servers."
             },
             "3": {
-                "title": "Finance Dashboard",
-                "description": "Financial data visualization with interactive charts and detailed reports."
+                "title": "Sorting Engine & Rules Automation",
+                "description": "Frontend platform for work order generation, business rule assignment, and template configuration powering industrial automated sorting machinery. Built with React and Nest.js APIs, tailored for warehouse plant operators."
+            },
+            "4": {
+                "title": "Wapidelo E-Commerce Platform",
+                "description": "Multi-store e-commerce platform in Panama featuring advanced conditional multi-criteria filters for high-traffic sales (Black Friday), reactive state management with Vuex, and checkout dispatch to WhatsApp."
             }
         }
     }

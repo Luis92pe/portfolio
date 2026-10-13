@@ -3,85 +3,119 @@
         "home": "Inicio",
         "projects": "Proyectos",
         "skills": "Habilidades",
+        "books": "Lecturas",
         "contact": "Contacto"
     },
     "hero": {
-        "available": "Disponible para nuevos proyectos",
-        "building": "Construyendo",
-        "experiences": "experiencias",
-        "digital": "digitales.",
-        "description": "Soy un Desarrollador Full Stack apasionado por crear aplicaciones limpias, eficientes y centradas en el usuario. Especializado en tecnologías web modernas y Arquitectura Limpia.",
+        "available": "Disponible para nuevos retos de liderazgo técnico",
+        "greeting": "Hola, soy Luis Peña 👋",
+        "building": "Construyo",
+        "experiences": "sistemas de misión crítica",
+        "digital": "y arquitectura escalable.",
+        "description": "Tech Lead Frontend con 11+ años de trayectoria en operaciones de alta exigencia. Antes de hablarte de títulos o biografías, prefiero mostrarte lo que he construido en producción para más de 12 países.",
         "talk": "Hablemos",
-        "work": "Ver Trabajo",
-        "download_cv": "Descargar CV"
+        "work": "Ver mi trabajo primero ↓",
+        "download_cv": "Descargar CV (PDF)",
+        "generating_cv": "Generando CV..."
+    },
+    "story": {
+        "bridge_1": {
+            "title": "El trabajo habla primero",
+            "quote": "Antes de hablar de mí o de mi biografía, prefiero que veas lo que he construido. En logística internacional, un error detiene camiones, almacenes y vuelos. Estos son los sistemas de misión crítica que he liderado en producción:"
+        },
+        "bridge_2": {
+            "title": "Criterio sobre sintaxis",
+            "quote": "Construir software para 12 países no se logra copiando sintaxis. En la era de la IA generativa, el verdadero valor de un Tech Lead está en saber aislar el dominio, gestionar la complejidad y diseñar arquitecturas limpias que perduren en el tiempo."
+        },
+        "bridge_3": {
+            "title": "El camino recorrido",
+            "quote": "Ahora que conoces qué hago y cómo pienso, te comparto el camino que recorrí para llegar hasta aquí: más de una década de evolución continua desde mis primeros proyectos independientes en 2013."
+        },
+        "bridge_4": {
+            "title": "¿Hablamos de tu proyecto?",
+            "quote": "Si buscas a alguien que lidere técnicamente con arquitectura limpia, cuide la calidad con code reviews y conecte Figma con producción sin fricción... conversemos."
+        }
     },
     "skills_section": {
-        "about_me": "Sobre Mí",
-        "title_part1": "Desarrollador Full Stack con",
-        "title_part2": "visión de diseño",
-        "bio1": "Aunque tengo sólidos conocimientos como Full Stack, mi verdadera fortaleza y pasión reside en el <1>Front End</1>. Me especializo en crear interfaces intuitivas y performantes que conectan con los usuarios.",
-        "bio2": "He trabajado extensamente con ecosistemas modernos como <1>React, React Native, Vue y Electron</1>. Además, mi background en diseño incluye el dominio de <3>Figma</3> y una certificación en UX/UI completada en 2019, lo que me permite cerrar la brecha entre el diseño y el código.",
+        "about_me": "Sobre Mí & Habilidades",
+        "title_part1": "Frontend Lead con",
+        "title_part2": "visión de arquitectura y resiliencia",
+        "bio1": "Con más de una década en la ingeniería de software, me especializo en <1>Frontend Architecture</1> y el diseño de sistemas de alta criticidad donde el rendimiento y la estabilidad son innegociables.",
+        "bio2": "Lidero equipos impulsando <1>Clean Architecture y Atomic Design</1> para garantizar cero regresiones en producción. Experiencia extensa integrando hardware industrial (balanzas volumétricas, impresoras térmicas, terminales Honeywell PDA) y WebSockets. Certificado en UX/UI con dominio avanzado de <3>Figma</3> para cerrar la brecha entre diseño y código de producción.",
         "tech_skills": "Habilidades Técnicas",
         "certified": "Certificado",
         "certificates": [
-            "UX/UI Design - Udemy (2019)",
-            "Scrum Master Certified - Scrum.org (2020)",
-            "AWS Certified Cloud Practitioner (2021)",
-            "Full Stack Web Development Bootcamp (2018)",
-            "JavaScript Algorithms and Data Structures - freeCodeCamp"
+            "Diseño UX/UI Profesional - Acámica (2019)",
+            "Vue.js Profesional & Básico - Platzi (2018)",
+            "Design Patterns for Software - Udemy (2018)",
+            "Desarrollo de Apps - Universidad Complutense de Madrid (2015)",
+            "Gamificación de Videojuegos - European University (2014)"
         ]
     },
     "timeline_section": {
         "title": "Trayectoria",
         "subtitle": "Git Log",
-        "description": "Un recorrido por mi evolución profesional, visualizado como un historial de commits."
+        "description": "Evolución profesional continua desde finales de 2013: freelance, desarrollador de sistemas corporativos y Tech Lead Frontend en logística internacional."
     },
     "projects_section": {
-        "title_small": "Portfolio",
-        "title_large": "Proyectos Destacados",
-        "description": "Una selección de mis trabajos más recientes, donde aplico las mejores prácticas de desarrollo y diseño moderno.",
+        "title_small": "Casos de Éxito",
+        "title_large": "Proyectos & Sistemas Clave",
+        "description": "Sistemas implementados en producción para entornos de alta demanda operativa, logística internacional y comercio electrónico.",
         "all_filter": "Todos",
         "empty": "No hay proyectos con esta tecnología."
+    },
+    "books_section": {
+        "title_small": "Fundamentos & Criterio",
+        "title_large": "Club de Lectura / Libros Clave",
+        "description": "En la era de la IA generativa, escribir código de memoria es secundario: el verdadero valor de un Tech Lead está en comprender principios profundos de diseño, arquitectura y gestión de la complejidad."
     },
     "data": {
         "career": {
             "1": {
-                "title": "Frontend Developer Specialist",
-                "description": "Comencé trabajando con Laravel en backend, pero mi pasión y habilidad por el frontend me llevaron a liderar iniciativas en el equipo de frontend. Actualmente enfocado en arquitecturas modernas y optimización de UX."
+                "title": "Tech Lead Frontend & Specialist",
+                "description": "Liderazgo técnico del equipo frontend para Mailamericas. Dirección de arquitectura para el ecosistema de almacenes operando en más de 12 países (Fulfillment Desktop/Web, PDA industriales Honeywell, Sorting de clasificación masiva y Correos App / MaGo). Adopción pionera de Clean Architecture y Atomic Design modular para erradicar regresiones en producción. Mentoría y code reviews exigentes."
             },
             "2": {
-                "title": "Freelance Frontend Developer",
-                "description": "Desarrollo de plataforma e-commerce en colaboración remota con un equipo en Panamá. Implementación completa del flujo de compras y catálogo."
+                "title": "Senior Frontend Developer (Contractor)",
+                "description": "Desarrollo de plataforma e-commerce multi-tienda como contractor independiente para el mercado panameño. Implementación de un motor reactivo de filtros condicionales avanzados para campañas masivas (Black Friday), gestión del estado con Vuex y automatización del flujo de compra hacia WhatsApp."
             },
             "3": {
-                "title": "Full Stack Developer",
-                "description": "Desarrollo de soluciones empresariales utilizando un stack diverso. Trabajé en mantenimiento y nuevas funcionalidades para clientes corporativos."
+                "title": "Semi-Senior Full Stack Developer",
+                "description": "Desarrollo de soluciones corporativas empresariales. Implementación de plataforma para el sector de hipismo en Python/Django, resolución bajo presión de módulos críticos de impresión en tiempo real y mantenimiento de servicios en Java, AngularJS y Laravel."
             },
             "4": {
-                "title": "Web Developer",
-                "description": "Desarrollo de un sistema integral para gestión de Call Center. Enfilé esfuerzos en la estabilidad del sistema y reportes en tiempo real."
+                "title": "Frontend Developer (Freelance)",
+                "description": "Desarrollo e integración como freelancer del módulo de usuarios, autenticación y vistas interactivas en Angular y Laravel desplegado en Heroku."
             },
             "5": {
-                "title": "Freelance Wordpress Developer",
-                "description": "Inicio de mi carrera profesional creando soluciones personalizadas y temas para WordPress."
+                "title": "Analista Programador Web & PHP",
+                "description": "Ingeniería del sistema integral de gestión para operaciones de Call Center enfocado en mora y cobranzas. Monitoreo en tiempo real de teleoperadores, panel analítico con métricas de llamadas y reportería ejecutiva."
             },
             "6": {
-                "title": "Graduación Universitaria",
-                "description": "Obtención del título profesional, marcando el inicio de mi carrera en el desarrollo de software."
+                "title": "Desarrollador Web / WordPress",
+                "description": "Inicio de trayectoria profesional a finales de 2013 creando soluciones web a medida, plugins personalizados y maquetación frontend/backend para clientes comerciales."
+            },
+            "7": {
+                "title": "Ingeniería en Informática & T.S.U.",
+                "description": "Graduación como Técnico Superior Universitario en 2013 y posterior obtención del título de Ingeniero en Informática en 2017, consolidando bases sólidas en ingeniería de software, estructuras de datos y arquitectura."
             }
         },
         "projects": {
             "1": {
-                "title": "E-commerce Moderno",
-                "description": "Una plataforma de comercio electrónico completa con carrito de compras, pagos y panel de administración."
+                "title": "Fulfillment Warehouse Logistics Suite",
+                "description": "Suite de escritorio y web de misión crítica para almacenes logísticos de Mailamericas en más de 12 países (Argentina, Perú, Jamaica, Seychelles, etc.). Control de paquetería de alto volumen (sacas de hasta 3,000 paquetes), balanzas volumétricas, WebSockets e impresión térmica con QueBeu. Arquitectura desacoplada con Clean Architecture y Atomic Design."
             },
             "2": {
-                "title": "App de Gestión de Tareas",
-                "description": "Aplicación de productividad para gestionar tareas personales y de equipo con actualizaciones en tiempo real."
+                "title": "Fulfillment PDA & Mobile Logistics",
+                "description": "Aplicación móvil en React Native para terminales industriales Honeywell en almacenes. Escaneo láser de códigos de barras/QR en sacas, contenedores y paquetería en tiempo real, sincronizando operaciones críticas de inventario con los servidores centrales."
             },
             "3": {
-                "title": "Dashboard de Finanzas",
-                "description": "Visualización de datos financieros con gráficos interactivos y reportes detallados."
+                "title": "Sorting Engine & Rules Automation",
+                "description": "Plataforma frontend para creación de órdenes de trabajo, asignación de reglas de negocio y configuración de plantillas para maquinaria de sorteo industrial automatizado. Construida en React con APIs Nest.js y diseño centrado en el operador de planta."
+            },
+            "4": {
+                "title": "Wapidelo E-Commerce Platform",
+                "description": "Plataforma e-commerce para Panamá con motor reactivo de filtros condicionales avanzados para ofertas de alto tráfico (Black Friday), gestión reactiva del estado con Vuex y embudo de conversión que envía pedidos automáticos a WhatsApp."
             }
         }
     }
