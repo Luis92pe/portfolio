@@ -10,32 +10,32 @@ import FadeIn from '../../components/atoms/FadeIn';
 
 const HomePage = () => {
     return (
-        <div className="min-h-screen bg-[#05050A] text-white selection:bg-violet-600 selection:text-white relative">
+        <div className="min-h-screen bg-[#000000] text-white selection:bg-violet-600 selection:text-white relative">
             <ArchitectureScrollBg />
 
             <Navbar />
             <main className="relative z-10">
-                {/* 1. Hero: Cargo/Experiencia tipeado + 4 Stats + 5 Redes */}
+                {/* 1. QUIÉN SOY (Hero con emblema retro, typewriter, métricas y redes) */}
                 <FadeIn>
                     <Hero />
                 </FadeIn>
 
-                {/* 2. Proyectos Clave (2x2 Grid -> Transición animada al detalle) */}
+                {/* 2. PROYECTOS (Grid 2x2 simple -> click para ver detalle completo) */}
                 <FadeIn>
                     <ProjectsSection />
                 </FadeIn>
 
-                {/* 3. Resumen para Reclutadores: Stack Puntual & Experiencia */}
+                {/* 3. EXPERIENCIA & STACK (Trayectoria 2013-HOY y valor aportado) */}
                 <FadeIn>
                     <TimelineSection />
                 </FadeIn>
 
-                {/* 4. Packs de Mentorías & Bolsa de Horas */}
+                {/* 4. LO QUE OFREZCO (Trabajar juntos, Mentoría Code Review/Escalabilidad, Atomic Design/FSD) */}
                 <FadeIn>
                     <MentorshipSection />
                 </FadeIn>
 
-                {/* 5. Contacto Directo + Mi CV para nuevos empleos */}
+                {/* 5. CONTACTO DIRECTO + MI CV PARA NUEVOS EMPLEOS */}
                 <FadeIn>
                     <ContactSection />
                 </FadeIn>

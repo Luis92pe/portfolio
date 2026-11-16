@@ -3,38 +3,22 @@
 @tailwind utilities;
 
 @layer base {
+    html,
     body {
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-        background-color: #05050A;
+        font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+        background-color: #000000;
         color: #FFFFFF;
+        letter-spacing: 0.01em;
     }
 
-    code, pre, .font-mono {
-        font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    code,
+    pre,
+    .font-mono {
+        font-family: 'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
     }
 }
 
 @layer utilities {
-    @keyframes marquee-left {
-        0% {
-            transform: translateX(0%);
-        }
-
-        100% {
-            transform: translateX(-50%);
-        }
-    }
-
-    @keyframes marquee-right {
-        0% {
-            transform: translateX(-50%);
-        }
-
-        100% {
-            transform: translateX(0%);
-        }
-    }
-
     @keyframes cursor-blink {
         0%, 49% {
             opacity: 1;
@@ -55,33 +39,97 @@
         }
     }
 
-    .animate-marquee-left {
-        animation: marquee-left linear infinite;
-    }
-
-    .animate-marquee-right {
-        animation: marquee-right linear infinite;
-    }
-
     .animate-cursor-blink {
-        animation: cursor-blink 1s infinite;
+        animation: cursor-blink 0.95s steps(2, start) infinite;
     }
 
     .animate-detail-enter {
-        animation: detail-enter 0.42s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        animation: detail-enter 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
-    .cta-gradient {
-        background-image: linear-gradient(135deg, #7c3aed 0%, #6366f1 50%, #3b82f6 100%);
+    /* Subtle Retro VGA CRT scanlines */
+    .vga-scanlines {
+        background: linear-gradient(
+            rgba(18, 16, 16, 0) 50%,
+            rgba(0, 0, 0, 0.38) 50%
+        );
+        background-size: 100% 4px;
     }
 
-    .cta-gradient:hover {
-        background-image: linear-gradient(135deg, #8b5cf6 0%, #6366f1 45%, #2563eb 100%);
+    /* Starfield CRT screen texture */
+    .crt-starfield {
+        background-image:
+            radial-gradient(rgba(255, 255, 255, 0.18) 1px, transparent 1px),
+            radial-gradient(rgba(167, 139, 250, 0.14) 1px, transparent 1px);
+        background-size: 36px 36px, 64px 64px;
+        background-position: 0 0, 18px 18px;
     }
 
-    .text-gradient-purple-blue {
-        background: linear-gradient(135deg, #ffffff 0%, #c4b5fd 45%, #818cf8 75%, #60a5fa 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+    /* Iconic Retro Vertical Rainbow Bars (UNICO CRT reference) */
+    .retro-rainbow-bars {
+        background: linear-gradient(
+            90deg,
+            #8b5cf6 0%,
+            #8b5cf6 16.6%,
+            #3b82f6 16.6%,
+            #3b82f6 33.2%,
+            #10b981 33.2%,
+            #10b981 49.8%,
+            #eab308 49.8%,
+            #eab308 66.4%,
+            #f97316 66.4%,
+            #f97316 83%,
+            #ef4444 83%,
+            #ef4444 100%
+        );
+    }
+
+    /* Horizontal Retro Rainbow Bar */
+    .retro-rainbow-line {
+        background: linear-gradient(
+            90deg,
+            #8b5cf6 0%,
+            #3b82f6 25%,
+            #10b981 50%,
+            #eab308 75%,
+            #ef4444 100%
+        );
+    }
+
+    /* CRT Monitor Outer Chassis with Pink/Purple Neon Backlight */
+    .crt-monitor-chassis {
+        background: linear-gradient(180deg, #181820 0%, #0c0c12 100%);
+        border: 2px solid #2a2a38;
+        box-shadow:
+            -25px 10px 70px -15px rgba(217, 70, 239, 0.35),
+            25px 10px 70px -15px rgba(139, 92, 246, 0.35),
+            0 25px 80px -20px rgba(99, 102, 241, 0.4),
+            inset 0 2px 4px rgba(255, 255, 255, 0.15);
+    }
+
+    /* Recessed CRT Screen Bezel */
+    .crt-screen-bezel {
+        background-color: #000000;
+        border: 10px solid #09090d;
+        box-shadow:
+            inset 0 0 40px rgba(0, 0, 0, 0.95),
+            0 0 0 1px rgba(255, 255, 255, 0.08);
+    }
+
+    /* Subtle phosphor glow */
+    .vga-glow {
+        text-shadow: 0 0 14px rgba(139, 92, 246, 0.45), 0 0 2px rgba(255, 255, 255, 0.25);
+    }
+
+    /* Console / VGA panel */
+    .vga-panel {
+        background-color: #05050A;
+        border: 1px solid rgba(139, 92, 246, 0.32);
+        box-shadow: inset 0 0 24px rgba(99, 102, 241, 0.05);
+    }
+
+    .vga-panel:hover {
+        border-color: rgba(167, 139, 250, 0.8);
+        box-shadow: 0 0 30px -8px rgba(139, 92, 246, 0.4), inset 0 0 24px rgba(99, 102, 241, 0.08);
     }
 }

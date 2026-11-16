@@ -10,7 +10,6 @@ const ProjectCard = ({
     date,
     role,
     company,
-    metrics,
     onSelect
 }) => {
     const { t } = useTranslation();
@@ -19,57 +18,46 @@ const ProjectCard = ({
         <button
             type="button"
             onClick={() => onSelect(id)}
-            className="group w-full text-left bg-[#0B0B15] hover:bg-[#101020] rounded-2xl p-5 sm:p-6 border border-white/10 hover:border-indigo-500/60 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between h-full cursor-pointer"
+            className="group w-full text-left vga-panel rounded-xl p-5 sm:p-6 transition-all duration-200 hover:-translate-y-1 flex flex-col justify-between h-full cursor-pointer relative overflow-hidden"
         >
+            {/* Top Thin Retro Rainbow Accent Line */}
+            <div className="absolute top-0 left-0 right-0 h-1 retro-rainbow-line opacity-75 group-hover:opacity-100 transition-opacity" />
+
             <div>
-                {/* Top Meta Row */}
                 <div className="flex items-center justify-between gap-2 mb-3">
-                    <span className="text-[11px] font-mono text-indigo-400 font-semibold">
-                        {role} • {company}
+                    <span className="text-xs font-mono text-indigo-300 font-bold">
+                        [0{id}] {role} • {company}
                     </span>
-                    <span className="text-[11px] font-mono text-slate-400">
+                    <span className="text-xs font-mono text-slate-400">
                         {date}
                     </span>
                 </div>
 
-                {/* Title + Arrow */}
-                <div className="flex items-start justify-between gap-3 mb-2">
-                    <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-indigo-300 transition-colors leading-snug">
-                        {title}
-                    </h3>
-                    <div className="w-8 h-8 rounded-full bg-white/[0.04] group-hover:bg-gradient-to-r group-hover:from-violet-600 group-hover:to-blue-600 text-slate-300 group-hover:text-white flex items-center justify-center flex-shrink-0 transition-all">
-                        <ArrowUpRight className="w-4 h-4" />
-                    </div>
-                </div>
+                <h3 className="text-xl sm:text-2xl font-black text-white group-hover:text-violet-300 transition-colors mb-2">
+                    {title}
+                </h3>
 
-                {/* Concise 1-2 line description */}
-                <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+                <p className="text-slate-200 text-sm leading-snug mb-4">
                     {shortDesc}
                 </p>
             </div>
 
-            <div>
-                {/* Stack Tags */}
-                <div className="flex flex-wrap gap-1.5 mb-4">
-                    {technologies.slice(0, 4).map((tech) => (
+            <div className="pt-3 border-t border-white/10 flex items-center justify-between gap-2">
+                <div className="flex flex-wrap gap-1.5">
+                    {technologies.slice(0, 3).map((tech) => (
                         <span
                             key={tech}
-                            className="px-2.5 py-0.5 text-[11px] font-mono text-indigo-200 bg-white/[0.04] rounded-md border border-white/[0.08]"
+                            className="px-2 py-0.5 text-[11px] font-mono text-white bg-black rounded border border-indigo-500/40"
                         >
                             {tech}
                         </span>
                     ))}
                 </div>
 
-                {/* Footer Metric + CTA */}
-                <div className="pt-3 border-t border-white/[0.06] flex items-center justify-between text-xs font-mono">
-                    <span className="text-slate-400 truncate pr-2">
-                        {metrics}
-                    </span>
-                    <span className="font-bold text-indigo-400 group-hover:text-white whitespace-nowrap">
-                        {t('projects_section.tap_hint')}
-                    </span>
-                </div>
+                <span className="inline-flex items-center gap-1 text-xs font-mono font-bold text-white bg-gradient-to-r from-violet-600 to-blue-600 px-3 py-1.5 rounded whitespace-nowrap shadow-sm">
+                    <span>{t('projects_section.tap_hint')}</span>
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                </span>
             </div>
         </button>
     );

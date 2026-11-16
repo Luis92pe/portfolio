@@ -4,7 +4,7 @@ export const projects = [
     {
         id: 1,
         title: 'Fulfillment Warehouse Logistics Suite',
-        description: 'Suite de escritorio y web de misión crítica para la gestión integral de almacenes logísticos de Mailamericas en más de 12 países (Argentina, Perú, Jamaica, Seychelles, etc.). Control de paquetería de alto volumen (sacas con hasta 3,000 paquetes), pesaje con balanzas volumétricas, comunicación en tiempo real con WebSockets e impresión industrial de etiquetas térmicas con QueBeu. Liderazgo en la migración a Clean Architecture y Atomic Design modular.',
+        description: 'Suite de escritorio y web de misión crítica para la gestión integral de almacenes logísticos de Mailamericas. Control de paquetería de alto volumen (sacas con hasta 3,000 paquetes), pesaje con balanzas volumétricas, comunicación en tiempo real con WebSockets e impresión industrial de etiquetas térmicas con QueBeu. Liderazgo en la migración a Clean Architecture y Atomic Design modular.',
         image: projectImage,
         technologies: ['Electron', 'Vue.js', 'Clean Architecture', 'Atomic Design', 'WebSockets', 'QueBeu'],
         date: '2021 - Presente',
@@ -12,7 +12,7 @@ export const projects = [
         isNDA: true,
         company: 'THEEGG / Mailamericas',
         role: 'Tech Lead Frontend',
-        metrics: '+12 Países • 3,000 paq/saca • 0 Regresiones'
+        metrics: '3,000 paq/saca • Tiempo Real • 0 Regresiones'
     },
     {
         id: 2,

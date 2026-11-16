@@ -4,7 +4,7 @@ export const careerHistory = [
         title: 'Tech Lead Frontend & Specialist',
         company: 'THEEGG BITS & BYTES LLC / Mailamericas',
         period: 'Julio 2017 - Presente',
-        description: 'Liderazgo técnico del equipo frontend para el cliente principal Mailamericas. Dirección de arquitectura para el ecosistema logístico de almacenes operando en más de 12 países (Fulfillment Desktop/Web, PDA industriales Honeywell, Sorting de clasificación masiva y Correos App / MaGo). Adopción pionera de Clean Architecture y Atomic Design modular tras resolver incidentes de acoplamiento en producción, asegurando cero regresiones. Mentoría a desarrolladores, code reviews rigurosos y maquetación pixel-perfect desde Figma.',
+        description: 'Liderazgo técnico del equipo frontend para el cliente principal Mailamericas. Dirección de arquitectura para el ecosistema logístico de almacenes de misión crítica (Fulfillment Desktop/Web, PDA industriales Honeywell, Sorting de clasificación masiva y Correos App / MaGo). Adopción pionera de Clean Architecture y Atomic Design modular tras resolver incidentes de acoplamiento en producción, asegurando cero regresiones. Mentoría a desarrolladores, code reviews rigurosos y maquetación pixel-perfect desde Figma.',
         technologies: ['Vue.js', 'React', 'React Native', 'Electron', 'Clean Architecture', 'Atomic Design', 'WebSockets', 'Honeywell PDA', 'Tailwind'],
         type: 'work'
     },
