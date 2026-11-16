@@ -9,7 +9,7 @@ Bienvenido a la documentación para agentes de IA y desarrolladores que interact
 - **Título**: Tech Lead Frontend & Senior Frontend Engineer
 - **Años de Trayectoria**: 11+ años de experiencia continua en desarrollo de software (inicios a finales de 2013).
 - **Ubicación & Contacto**: Venezuela (Disponible Remoto Global) | `luis92pe@gmail.com` | `+58 414 243 5600`
-- **Perfiles**: [GitHub (luis92pe)](https://github.com/luis92pe) | [LinkedIn (luis92pe)](https://linkedin.com/in/luis92pe)
+- **Perfiles**: [GitHub (luis92pe)](https://github.com/luis92pe) | [LinkedIn (lpena92)](https://www.linkedin.com/in/lpena92/)
 - **Empresa Actual**: **THEEGG BITS & BYTES LLC** (Cliente principal: **Mailamericas**).
 - **Core de Especialización**:
   1. **Frontend Industrial de Misión Crítica**: Integración de interfaces web, desktop y mobile con hardware en planta (terminales industriales Honeywell PDA, balanzas volumétricas, impresoras térmicas con QueBeu, WebSockets en tiempo real).

@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { Menu, X, Code, Briefcase, User, Mail, Globe, BookOpen, BookMarked, GitBranch } from 'lucide-react';
+import { Menu, X, Terminal } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import ThemeToggle from '../atoms/ThemeToggle';
+import { useLocation, useNavigate } from 'react-router-dom';
 import DownloadCVButton from '../atoms/DownloadCVButton';
 
 const Navbar = () => {
@@ -18,134 +17,108 @@ const Navbar = () => {
     };
 
     const navLinks = [
-        { name: t('navbar.home'), href: isHome ? '#home' : '/#home', icon: User },
-        { name: t('navbar.projects'), href: isHome ? '#projects' : '/#projects', icon: Briefcase },
-        { name: t('navbar.books'), href: isHome ? '#books' : '/#books', icon: BookMarked },
-        { name: t('timeline_section.title'), href: isHome ? '#career' : '/#career', icon: GitBranch },
-        { name: t('navbar.skills'), href: isHome ? '#skills' : '/#skills', icon: Code },
-        { name: t('navbar.contact'), href: isHome ? '#contact' : '/#contact', icon: Mail },
-        { name: 'Blog FSD', href: '/blog/fsd', icon: BookOpen, isRouterLink: true },
+        { name: t('navbar.projects'), href: isHome ? '#projects' : '/#projects' },
+        { name: t('navbar.experience'), href: isHome ? '#career' : '/#career' },
+        { name: t('navbar.mentorship'), href: isHome ? '#mentorship' : '/#mentorship' },
+        { name: t('navbar.contact'), href: isHome ? '#contact' : '/#contact' },
     ];
 
+    const handleNavClick = (e, href) => {
+        setIsOpen(false);
+        if (!isHome) {
+            e.preventDefault();
+            navigate('/');
+            setTimeout(() => {
+                const id = href.replace('/#', '');
+                document.getElementById(id)?.scrollIntoView();
+            }, 100);
+        }
+    };
+
     return (
-        <nav className="fixed w-full z-50 transition-all duration-300 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-gray-100 dark:border-slate-800 shadow-sm">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between h-16 items-center">
-                    <div className="flex-shrink-0 flex items-center">
-                        <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-indigo-400 dark:to-blue-400 bg-clip-text text-transparent">
-                            Luis Peña
+        <nav className="fixed w-full z-50 bg-[#05050A]/80 backdrop-blur-xl border-b border-white/[0.06]">
+            <div className="max-w-5xl mx-auto px-4 sm:px-6">
+                <div className="flex justify-between h-14 items-center">
+                    {/* Minimalist Brand */}
+                    <a
+                        href={isHome ? '#home' : '/#home'}
+                        className="flex items-center gap-2 group"
+                    >
+                        <Terminal className="w-4 h-4 text-violet-400" />
+                        <span className="text-sm sm:text-base font-bold font-mono tracking-tight text-white">
+                            luis<span className="text-indigo-400">.pena</span>
                         </span>
-                    </div>
+                    </a>
 
-                    <div className="hidden md:flex items-center space-x-4 lg:space-x-5">
+                    {/* Clean 4-item Desktop Navigation */}
+                    <div className="hidden md:flex items-center gap-6">
                         {navLinks.map((link) => (
-                            link.isRouterLink ? (
-                                <Link
-                                    key={link.href}
-                                    to={link.href}
-                                    className="flex items-center space-x-1 text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-indigo-400 hover:bg-blue-50 dark:hover:bg-slate-800 px-2.5 py-2 rounded-lg transition-colors duration-200 font-medium text-xs lg:text-sm"
-                                >
-                                    <link.icon className="w-3.5 h-3.5" />
-                                    <span>{link.name}</span>
-                                </Link>
-                            ) : (
-                                <a
-                                    key={link.href}
-                                    href={link.href}
-                                    onClick={(e) => {
-                                        if (!isHome) {
-                                            e.preventDefault();
-                                            navigate('/');
-                                            setTimeout(() => {
-                                                const id = link.href.replace('/#', '');
-                                                document.getElementById(id)?.scrollIntoView();
-                                            }, 100);
-                                        }
-                                    }}
-                                    className="flex items-center space-x-1 text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-indigo-400 hover:bg-blue-50 dark:hover:bg-slate-800 px-2.5 py-2 rounded-lg transition-colors duration-200 font-medium text-xs lg:text-sm"
-                                >
-                                    <link.icon className="w-3.5 h-3.5" />
-                                    <span>{link.name}</span>
-                                </a>
-                            )
-                        ))}
-
-                        {/* Direct PDF Download button in Navbar */}
-                        <DownloadCVButton variant="primary" className="!text-xs !px-3.5 !py-2" />
-
-                        {/* Theme and Language Switcher Desktop */}
-                        <div className="flex items-center gap-1.5 pl-2 border-l border-slate-200 dark:border-slate-700">
-                            <button
-                                onClick={toggleLanguage}
-                                className="flex items-center space-x-1 px-2.5 py-1.5 rounded-lg bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-bold transition-colors border border-slate-200 dark:border-slate-700 text-xs"
+                            <a
+                                key={link.href}
+                                href={link.href}
+                                onClick={(e) => handleNavClick(e, link.href)}
+                                className="text-slate-300 hover:text-white transition-colors text-xs font-medium tracking-wide"
                             >
-                                <Globe className="w-3.5 h-3.5" />
-                                <span>{i18n.language === 'es' ? 'ES' : 'EN'}</span>
-                            </button>
-                            <ThemeToggle />
-                        </div>
+                                {link.name}
+                            </a>
+                        ))}
                     </div>
 
-                    <div className="md:hidden flex items-center gap-2">
-                        <DownloadCVButton variant="primary" className="!px-2.5 !py-1.5 !text-xs" />
-
-                        {/* Theme and Language Switcher Mobile */}
+                    {/* Right Actions: Language + Compact CV */}
+                    <div className="hidden md:flex items-center gap-2.5">
                         <button
                             onClick={toggleLanguage}
-                            className="flex items-center space-x-1 px-2 py-1.5 rounded bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold border border-slate-200 dark:border-slate-700"
+                            className="px-2.5 py-1 rounded-lg bg-white/[0.04] hover:bg-white/[0.1] text-slate-300 hover:text-white font-mono text-xs border border-white/10 transition-colors cursor-pointer"
                         >
-                            <Globe className="w-3.5 h-3.5" />
-                            <span>{i18n.language === 'es' ? 'ES' : 'EN'}</span>
+                            {i18n.language === 'es' ? 'ES' : 'EN'}
                         </button>
 
-                        <ThemeToggle />
+                        <DownloadCVButton
+                            variant="primary"
+                            label={t('navbar.cv_short')}
+                            className="!text-xs !px-3.5 !py-1.5 !rounded-lg"
+                        />
+                    </div>
+
+                    {/* Mobile Controls */}
+                    <div className="md:hidden flex items-center gap-2">
+                        <button
+                            onClick={toggleLanguage}
+                            className="px-2 py-1 rounded-md bg-white/[0.05] text-slate-300 text-xs font-mono border border-white/10"
+                        >
+                            {i18n.language === 'es' ? 'ES' : 'EN'}
+                        </button>
 
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-indigo-400 focus:outline-none p-2"
+                            className="text-slate-300 hover:text-white p-1.5"
+                            aria-label="Menu"
                         >
-                            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                            {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
                         </button>
                     </div>
                 </div>
             </div>
 
+            {/* Clean Mobile Dropdown */}
             {isOpen && (
-                <div className="md:hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-gray-100 dark:border-slate-800 shadow-lg absolute w-full">
-                    <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                        {navLinks.map((link) => (
-                            link.isRouterLink ? (
-                                <Link
-                                    key={link.href}
-                                    to={link.href}
-                                    className="flex items-center space-x-2 text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-indigo-400 hover:bg-blue-50 dark:hover:bg-slate-800 block px-3 py-3 rounded-md text-base font-medium transition-colors"
-                                    onClick={() => setIsOpen(false)}
-                                >
-                                    <link.icon className="w-5 h-5" />
-                                    <span>{link.name}</span>
-                                </Link>
-                            ) : (
-                                <a
-                                    key={link.href}
-                                    href={link.href}
-                                    className="flex items-center space-x-2 text-gray-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-indigo-400 hover:bg-blue-50 dark:hover:bg-slate-800 block px-3 py-3 rounded-md text-base font-medium transition-colors"
-                                    onClick={(e) => {
-                                        setIsOpen(false);
-                                        if (!isHome) {
-                                            e.preventDefault();
-                                            navigate('/');
-                                            setTimeout(() => {
-                                                const id = link.href.replace('/#', '');
-                                                document.getElementById(id)?.scrollIntoView();
-                                            }, 100);
-                                        }
-                                    }}
-                                >
-                                    <link.icon className="w-5 h-5" />
-                                    <span>{link.name}</span>
-                                </a>
-                            )
-                        ))}
+                <div className="md:hidden bg-[#080811]/95 backdrop-blur-xl border-b border-white/10 px-4 pt-2 pb-4 space-y-1">
+                    {navLinks.map((link) => (
+                        <a
+                            key={link.href}
+                            href={link.href}
+                            onClick={(e) => handleNavClick(e, link.href)}
+                            className="block py-2.5 px-3 rounded-lg text-sm font-medium text-slate-200 hover:text-white hover:bg-white/[0.05]"
+                        >
+                            {link.name}
+                        </a>
+                    ))}
+                    <div className="pt-2">
+                        <DownloadCVButton
+                            variant="primary"
+                            label={t('hero.download_cv')}
+                            className="!w-full !py-2.5 !text-xs"
+                        />
                     </div>
                 </div>
             )}

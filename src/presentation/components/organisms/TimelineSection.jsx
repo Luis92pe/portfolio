@@ -1,83 +1,111 @@
 import React from 'react';
-import { GitCommit, GitBranch } from 'lucide-react';
-import { careerHistory } from '../../../data/career';
 import { useTranslation } from 'react-i18next';
+
+const compactCareer = [
+    {
+        id: 1,
+        period: '2021 - Presente',
+        company: 'THEEGG / Mailamericas',
+        tags: ['React', 'Vue', 'React Native', 'Electron', 'Clean Architecture']
+    },
+    {
+        id: 2,
+        period: '2019 - 2020',
+        company: 'Wapidelo (Panamá)',
+        tags: ['Vue.js', 'Vuex', 'REST APIs', 'E-Commerce']
+    },
+    {
+        id: 3,
+        period: '2018 - 2019',
+        company: 'Bera / Soluciones Corporativas',
+        tags: ['Python / Django', 'AngularJS', 'Java', 'Real-Time Print']
+    },
+    {
+        id: 4,
+        period: '2013 - 2018',
+        company: 'Inicios & Ingeniería en Informática',
+        tags: ['Angular', 'Laravel', 'PHP', 'Ing. Informática (IUT)']
+    }
+];
 
 const TimelineSection = () => {
     const { t } = useTranslation();
+    const stackCategories = t('timeline_section.stack_categories', { returnObjects: true }) || [];
 
     return (
-        <section id="career" className="py-16 sm:py-24 bg-slate-50/70 dark:bg-slate-900/60 overflow-hidden relative transition-colors backdrop-blur-xs">
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="text-center mb-10 sm:mb-16">
-                    <h2 className="text-xs sm:text-sm font-bold tracking-wide text-blue-600 dark:text-blue-400 uppercase mb-2">
-                        {t('timeline_section.title')}
+        <section id="career" className="py-14 sm:py-20 bg-[#05050A] relative border-t border-white/[0.05]">
+            <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
+                {/* Header */}
+                <div className="mb-8 sm:mb-10">
+                    <span className="text-xs font-mono uppercase tracking-widest text-indigo-400 block mb-1">
+                        // {t('timeline_section.title')}
+                    </span>
+                    <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+                        {t('timeline_section.subtitle')}
                     </h2>
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mb-3 sm:mb-4">
-                        {t('timeline_section.subtitle')} <span className="font-mono text-blue-600 dark:text-blue-400 text-xl sm:text-2xl">--career</span>
-                    </h3>
-                    <p className="text-sm sm:text-lg text-slate-600 dark:text-slate-300">
-                        {t('timeline_section.description')}
-                    </p>
                 </div>
 
-                <div className="relative">
-                    {/* Vertical Git Line */}
-                    <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-200 via-blue-400 to-blue-200 dark:from-blue-900 dark:via-blue-500 dark:to-blue-900 transform md:-translate-x-1/2 rounded-full"></div>
+                {/* 1. Scannable Stack Grid (3 Columns) */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+                    {stackCategories.map((cat, idx) => (
+                        <div
+                            key={idx}
+                            className="bg-[#0B0B15] rounded-2xl p-5 border border-white/10"
+                        >
+                            <h3 className="text-xs font-mono uppercase tracking-wider text-indigo-400 font-bold mb-3">
+                                {cat.label}
+                            </h3>
+                            <div className="flex flex-wrap gap-1.5">
+                                {(cat.items || []).map((item) => (
+                                    <span
+                                        key={item}
+                                        className="px-2.5 py-1 rounded-lg bg-white/[0.04] border border-white/[0.08] text-white text-xs font-mono"
+                                    >
+                                        {item}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+                    ))}
+                </div>
 
-                    <div className="space-y-8 sm:space-y-12">
-                        {careerHistory.map((item, index) => {
-                            const isEven = index % 2 === 0;
-                            return (
-                                <div key={item.id} className={`relative flex items-center ${isEven ? 'md:flex-row-reverse' : ''}`}>
+                {/* 2. Compact Career List (Scannable in 5 seconds) */}
+                <div className="space-y-3">
+                    {compactCareer.map((item) => (
+                        <div
+                            key={item.id}
+                            className="bg-[#0B0B15]/80 hover:bg-[#0F0F1E] rounded-2xl p-4 sm:p-5 border border-white/10 hover:border-indigo-500/40 transition-colors flex flex-col md:flex-row md:items-center justify-between gap-3 sm:gap-6"
+                        >
+                            <div className="md:w-48 flex-shrink-0">
+                                <span className="text-xs font-mono text-indigo-400 font-bold block">
+                                    {item.period}
+                                </span>
+                                <span className="text-xs font-mono text-slate-400">
+                                    {item.company}
+                                </span>
+                            </div>
 
-                                    {/* Timeline Node/Commit Dot */}
-                                    <div className="absolute left-4 md:left-1/2 w-3.5 h-3.5 sm:w-4 sm:h-4 bg-white dark:bg-slate-900 border-4 border-blue-600 dark:border-blue-400 rounded-full transform -translate-x-[5px] md:-translate-x-1/2 z-10 shadow-md"></div>
+                            <div className="flex-1">
+                                <h4 className="text-sm sm:text-base font-bold text-white mb-1">
+                                    {t(`data.career.${item.id}.title`)}
+                                </h4>
+                                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                                    {t(`data.career.${item.id}.description`)}
+                                </p>
+                            </div>
 
-                                    {/* Content Card */}
-                                    <div className={`ml-10 md:ml-0 w-full md:w-1/2 ${isEven ? 'md:pl-10' : 'md:pr-10'}`}>
-                                        <div className="p-4 sm:p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700/80 hover:shadow-md transition-all duration-300 relative group">
-
-                                            {/* Decorative Git Icon */}
-                                            <div className={`absolute top-5 ${isEven ? '-left-3 md:-left-3' : '-left-3 md:-right-3'} w-6 h-6 bg-blue-50 dark:bg-slate-900 text-blue-600 dark:text-blue-400 rounded-full flex items-center justify-center border border-blue-100 dark:border-slate-700 z-10`}>
-                                                <GitCommit className="w-3.5 h-3.5" />
-                                            </div>
-
-                                            <div className="flex justify-between items-start mb-2">
-                                                <span className="inline-block px-2.5 py-0.5 rounded-full bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 text-[11px] sm:text-xs font-bold font-mono border border-blue-100 dark:border-blue-900">
-                                                    {item.period}
-                                                </span>
-                                                {item.type === 'education' && (
-                                                    <GitBranch className="w-4 h-4 text-green-500" />
-                                                )}
-                                            </div>
-
-                                            <h4 className="text-base sm:text-xl font-bold text-slate-900 dark:text-white mb-1 leading-snug">
-                                                {t(`data.career.${item.id}.title`)}
-                                            </h4>
-                                            <h5 className="text-xs sm:text-sm font-semibold text-blue-600 dark:text-blue-400 mb-2 sm:mb-3">
-                                                {item.company}
-                                            </h5>
-
-                                            <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4">
-                                                {t(`data.career.${item.id}.description`)}
-                                            </p>
-
-                                            {item.technologies.length > 0 && (
-                                                <div className="flex flex-wrap gap-1 sm:gap-1.5 pt-2.5 border-t border-slate-50 dark:border-slate-700/60">
-                                                    {item.technologies.map(tech => (
-                                                        <span key={tech} className="text-[10px] sm:text-xs font-medium text-slate-600 dark:text-slate-300 px-2 py-0.5 bg-slate-100 dark:bg-slate-700/70 rounded">
-                                                            {tech}
-                                                        </span>
-                                                    ))}
-                                                </div>
-                                            )}
-                                        </div>
-                                    </div>
-                                </div>
-                            );
-                        })}
-                    </div>
+                            <div className="flex flex-wrap gap-1.5 md:w-56 md:justify-end flex-shrink-0">
+                                {item.tags.map((tag) => (
+                                    <span
+                                        key={tag}
+                                        className="px-2 py-0.5 rounded text-[11px] font-mono bg-white/[0.04] text-indigo-200 border border-white/[0.08]"
+                                    >
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>

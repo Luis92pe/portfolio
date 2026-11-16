@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Github, Linkedin, MessageCircle, Send, ArrowUp } from 'lucide-react';
+import { Mail, Github, Linkedin, MessageCircle, ArrowUp, ArrowUpRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import DownloadCVButton from '../atoms/DownloadCVButton';
 import { profileData } from '../../../data/profile';
@@ -12,91 +12,120 @@ const ContactSection = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
+    const contactBars = [
+        {
+            id: 'whatsapp',
+            icon: MessageCircle,
+            label: t('contact_section.bars.whatsapp_label'),
+            value: p.phone,
+            action: t('contact_section.bars.whatsapp_action'),
+            href: 'https://wa.me/584142435600',
+            external: true
+        },
+        {
+            id: 'email',
+            icon: Mail,
+            label: t('contact_section.bars.email_label'),
+            value: p.email,
+            action: t('contact_section.bars.email_action'),
+            href: `mailto:${p.email}`,
+            external: false
+        },
+        {
+            id: 'linkedin',
+            icon: Linkedin,
+            label: t('contact_section.bars.linkedin_label'),
+            value: 'linkedin.com/in/lpena92',
+            action: t('contact_section.bars.linkedin_action'),
+            href: p.linkedin,
+            external: true
+        }
+    ];
+
     return (
-        <section id="contact" className="py-16 sm:py-24 bg-gradient-to-b from-white/70 via-slate-50/80 to-blue-50/40 dark:from-slate-900/80 dark:via-slate-900/90 dark:to-slate-950 transition-colors relative overflow-hidden backdrop-blur-xs">
-            <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="bg-white/90 dark:bg-slate-800/95 rounded-2xl sm:rounded-3xl p-6 sm:p-12 border border-slate-200/90 dark:border-slate-700 shadow-xl relative overflow-hidden text-center backdrop-blur-sm">
-                    {/* Background glow */}
-                    <div className="absolute -top-24 -right-24 w-60 h-60 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
-                    <div className="absolute -bottom-24 -left-24 w-60 h-60 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
-
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/70 border border-blue-100 dark:border-blue-900 text-blue-700 dark:text-blue-300 text-xs font-bold uppercase tracking-wider mb-3 sm:mb-4">
-                        <Send className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
-                        Punto de Encuentro
-                    </span>
-
-                    <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-3 sm:mb-6 tracking-tight">
-                        ¿Conversamos sobre tu próximo reto técnico?
-                    </h2>
-
-                    <p className="text-sm sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed">
-                        Si tu empresa necesita liderazgo técnico en frontend, arquitecturas limpias preparadas para la escala o alguien que traduzca la visión de producto y diseño en sistemas de misión crítica... conversemos.
-                    </p>
-
-                    {/* Contact cards - 2 columns on mobile, 4 on desktop */}
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-4xl mx-auto mb-8 sm:mb-10">
-                        <a
-                            href={`mailto:${p.email}`}
-                            className="flex flex-col items-center p-3.5 sm:p-5 rounded-xl sm:rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/70 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-md transition-all group"
-                        >
-                            <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 dark:text-blue-400 mb-1.5 sm:mb-2 group-hover:scale-110 transition-transform" />
-                            <span className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase">Email</span>
-                            <span className="text-[11px] sm:text-xs font-semibold text-slate-800 dark:text-slate-200 truncate w-full mt-1">
-                                {p.email}
-                            </span>
-                        </a>
-
-                        <a
-                            href={`https://wa.me/584142435600`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex flex-col items-center p-3.5 sm:p-5 rounded-xl sm:rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/70 dark:border-slate-700 hover:border-green-500 dark:hover:border-green-500 hover:shadow-md transition-all group"
-                        >
-                            <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 text-green-600 dark:text-green-400 mb-1.5 sm:mb-2 group-hover:scale-110 transition-transform" />
-                            <span className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase">WhatsApp</span>
-                            <span className="text-[11px] sm:text-xs font-semibold text-slate-800 dark:text-slate-200 truncate w-full mt-1">
-                                {p.phone}
-                            </span>
-                        </a>
-
-                        <a
-                            href={p.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex flex-col items-center p-3.5 sm:p-5 rounded-xl sm:rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/70 dark:border-slate-700 hover:border-blue-600 dark:hover:border-blue-400 hover:shadow-md transition-all group"
-                        >
-                            <Linkedin className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 dark:text-blue-400 mb-1.5 sm:mb-2 group-hover:scale-110 transition-transform" />
-                            <span className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase">LinkedIn</span>
-                            <span className="text-[11px] sm:text-xs font-semibold text-slate-800 dark:text-slate-200 truncate w-full mt-1">
-                                /in/luis92pe
-                            </span>
-                        </a>
-
-                        <a
-                            href={p.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex flex-col items-center p-3.5 sm:p-5 rounded-xl sm:rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/70 dark:border-slate-700 hover:border-purple-600 dark:hover:border-purple-400 hover:shadow-md transition-all group"
-                        >
-                            <Github className="w-5 h-5 sm:w-6 sm:h-6 text-slate-700 dark:text-slate-300 mb-1.5 sm:mb-2 group-hover:scale-110 transition-transform" />
-                            <span className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase">GitHub</span>
-                            <span className="text-[11px] sm:text-xs font-semibold text-slate-800 dark:text-slate-200 truncate w-full mt-1">
-                                @luis92pe
-                            </span>
-                        </a>
+        <section id="contact" className="py-14 sm:py-20 bg-[#05050A] relative border-t border-white/[0.05]">
+            <div className="max-w-3xl mx-auto px-4 sm:px-6 relative z-10">
+                <div className="bg-[#0B0B15] rounded-3xl p-6 sm:p-9 border border-white/10">
+                    {/* Compact Header */}
+                    <div className="text-center mb-6 sm:mb-8">
+                        <span className="text-xs font-mono uppercase tracking-widest text-indigo-400 block mb-1">
+                            // {t('contact_section.badge')}
+                        </span>
+                        <h2 className="text-2xl sm:text-4xl font-extrabold text-white mb-2 tracking-tight">
+                            {t('contact_section.title')}
+                        </h2>
+                        <p className="text-xs sm:text-sm text-slate-400">
+                            {t('contact_section.subtitle')}
+                        </p>
                     </div>
 
-                    {/* Resume CTA */}
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-4 sm:pt-6 border-t border-slate-100 dark:border-slate-700">
-                        <DownloadCVButton variant="primary" className="!w-full sm:!w-auto !px-6 !py-3 !text-sm sm:!text-base justify-center" />
-                        <button
-                            onClick={scrollToTop}
-                            className="inline-flex items-center justify-center gap-2 text-xs font-semibold text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 transition-colors cursor-pointer py-2"
-                        >
-                            <ArrowUp className="w-3.5 h-3.5" />
-                            Volver al inicio
-                        </button>
+                    {/* 3 Horizontal Contact Bars */}
+                    <div className="space-y-3 mb-7">
+                        {contactBars.map((bar) => (
+                            <a
+                                key={bar.id}
+                                href={bar.href}
+                                target={bar.external ? '_blank' : undefined}
+                                rel={bar.external ? 'noopener noreferrer' : undefined}
+                                className="group flex items-center justify-between gap-3 px-4 py-3.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.06] border border-white/10 hover:border-indigo-500/50 transition-all"
+                            >
+                                <div className="flex items-center gap-3 min-w-0">
+                                    <bar.icon className="w-4 h-4 text-violet-400 flex-shrink-0" />
+                                    <span className="text-xs font-mono text-slate-400 hidden sm:inline">
+                                        {bar.label}:
+                                    </span>
+                                    <span className="text-xs sm:text-sm font-bold text-white font-mono truncate">
+                                        {bar.value}
+                                    </span>
+                                </div>
+
+                                <div className="inline-flex items-center gap-1 text-xs font-mono text-indigo-300 group-hover:text-white flex-shrink-0">
+                                    <span>{bar.action}</span>
+                                    <ArrowUpRight className="w-3.5 h-3.5" />
+                                </div>
+                            </a>
+                        ))}
                     </div>
+
+                    {/* Bottom Row: Networks + "Mi CV para nuevos empleos" */}
+                    <div className="pt-5 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div className="flex items-center gap-2.5">
+                            <a
+                                href={p.github}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="GitHub"
+                                className="w-10 h-10 rounded-full bg-white/[0.04] hover:bg-gradient-to-br hover:from-violet-600 hover:to-blue-600 text-slate-200 hover:text-white border border-white/15 flex items-center justify-center transition-all"
+                            >
+                                <Github className="w-4 h-4" />
+                            </a>
+                            <a
+                                href={p.linkedin}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="LinkedIn"
+                                className="w-10 h-10 rounded-full bg-white/[0.04] hover:bg-gradient-to-br hover:from-violet-600 hover:to-blue-600 text-slate-200 hover:text-white border border-white/15 flex items-center justify-center transition-all"
+                            >
+                                <Linkedin className="w-4 h-4" />
+                            </a>
+                        </div>
+
+                        <DownloadCVButton
+                            variant="primary"
+                            label={t('contact_section.cv_button')}
+                            className="!w-full sm:!w-auto !px-5 !py-3 !text-xs sm:!text-sm"
+                        />
+                    </div>
+                </div>
+
+                <div className="mt-6 text-center">
+                    <button
+                        onClick={scrollToTop}
+                        className="inline-flex items-center gap-1.5 text-xs font-mono text-slate-500 hover:text-white transition-colors cursor-pointer"
+                    >
+                        <ArrowUp className="w-3.5 h-3.5 text-indigo-400" />
+                        {t('contact_section.back_top')}
+                    </button>
                 </div>
             </div>
         </section>

@@ -1,86 +1,177 @@
-import React from 'react';
-import { ArrowDown, Github, Linkedin } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ArrowDown, Github, Linkedin, Mail, MessageCircle, Sparkles } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import DownloadCVButton from '../atoms/DownloadCVButton';
 import { profileData } from '../../../data/profile';
 
 const Hero = () => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+    const typingLines = t('hero.typing_lines', { returnObjects: true }) || [
+        'Tech Lead Frontend (11+ años de exp.)',
+        'React • Vue • React Native • Electron'
+    ];
+    const quickStats = t('hero.quick_stats', { returnObjects: true }) || [];
+
+    const [lineIndex, setLineIndex] = useState(0);
+    const [displayedText, setDisplayedText] = useState('');
+    const [isDeleting, setIsDeleting] = useState(false);
+
+    useEffect(() => {
+        setLineIndex(0);
+        setDisplayedText('');
+        setIsDeleting(false);
+    }, [i18n.language]);
+
+    useEffect(() => {
+        const currentFullLine = typingLines[lineIndex % typingLines.length] || '';
+        const typingSpeed = isDeleting ? 25 : 48;
+
+        const timer = setTimeout(() => {
+            if (!isDeleting && displayedText.length < currentFullLine.length) {
+                setDisplayedText(currentFullLine.slice(0, displayedText.length + 1));
+            } else if (!isDeleting && displayedText.length === currentFullLine.length) {
+                setTimeout(() => setIsDeleting(true), 2000);
+            } else if (isDeleting && displayedText.length > 0) {
+                setDisplayedText(currentFullLine.slice(0, displayedText.length - 1));
+            } else if (isDeleting && displayedText.length === 0) {
+                setIsDeleting(false);
+                setLineIndex((prev) => (prev + 1) % typingLines.length);
+            }
+        }, typingSpeed);
+
+        return () => clearTimeout(timer);
+    }, [displayedText, isDeleting, lineIndex, typingLines]);
+
+    const p = profileData.personal;
 
     return (
-        <section id="home" className="relative pt-20 pb-12 sm:pt-32 sm:pb-20 lg:pb-28 overflow-hidden bg-gradient-to-br from-indigo-50/70 via-white/80 to-blue-50/70 dark:from-slate-900/80 dark:via-slate-900/90 dark:to-slate-800/80 min-h-[90vh] flex items-center">
-            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse lg:flex-row items-center gap-8 sm:gap-12">
-                <div className="flex-1 text-center lg:text-left space-y-6 sm:space-y-8 z-10 w-full">
-                    <div className="inline-flex items-center px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-100 dark:border-blue-900 text-blue-700 dark:text-blue-300 text-xs sm:text-sm font-medium animate-fade-in-up">
-                        <span className="relative flex h-2.5 w-2.5 sm:h-3 sm:w-3 mr-2">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-2.5 w-2.5 sm:h-3 sm:w-3 bg-blue-500"></span>
-                        </span>
-                        {t('hero.available')}
+        <section
+            id="home"
+            className="relative pt-24 pb-14 sm:pt-32 sm:pb-20 min-h-[85vh] flex items-center justify-center overflow-hidden bg-[#05050A]"
+        >
+            {/* Subtle bluish-purple ambient glow */}
+            <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[540px] h-[280px] bg-gradient-to-tr from-violet-600/20 via-indigo-600/15 to-blue-600/20 rounded-full blur-[110px] pointer-events-none" />
+
+            <div className="relative max-w-4xl mx-auto px-4 sm:px-6 w-full z-10 text-center">
+                {/* Compact Recruiter Availability Badge */}
+                <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-white/[0.03] border border-white/10 text-slate-300 text-xs font-mono mb-6">
+                    <span className="w-2 h-2 rounded-full bg-violet-400 mr-2 animate-pulse" />
+                    {t('hero.available')}
+                </div>
+
+                {/* Minimalist Code Editor Typewriter Box */}
+                <div className="max-w-3xl mx-auto rounded-2xl bg-[#0A0A14]/90 border border-white/10 shadow-[0_0_50px_-15px_rgba(99,102,241,0.28)] overflow-hidden text-left mb-8">
+                    <div className="flex items-center justify-between px-4 py-2.5 bg-white/[0.02] border-b border-white/[0.06]">
+                        <div className="flex items-center gap-1.5">
+                            <span className="w-2.5 h-2.5 rounded-full bg-rose-500/70" />
+                            <span className="w-2.5 h-2.5 rounded-full bg-amber-400/70" />
+                            <span className="w-2.5 h-2.5 rounded-full bg-emerald-400/70" />
+                            <span className="ml-2 text-[11px] font-mono text-slate-400">
+                                {p.fullName} — {t('hero.editor_file')}
+                            </span>
+                        </div>
+                        <span className="text-[10px] font-mono text-indigo-400">TS</span>
                     </div>
 
-                    <div className="space-y-2 sm:space-y-3">
-                        <p className="text-base sm:text-xl font-bold text-blue-600 dark:text-blue-400 font-mono tracking-tight">
-                            {t('hero.greeting')}
+                    <div className="p-5 sm:p-8 font-mono">
+                        <p className="text-xs text-indigo-400 mb-2">
+                            // {t('hero.role_label')}
                         </p>
-                        <h1 className="text-3xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15]">
-                            {t('hero.building')} <br className="hidden sm:block" />
-                            <span className="bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 bg-clip-text text-transparent">
-                                {t('hero.experiences')}
-                            </span> {t('hero.digital')}
+
+                        <h1 className="text-xl sm:text-3xl md:text-4xl font-extrabold text-white leading-snug min-h-[3.2rem] sm:min-h-[3.8rem] flex items-center">
+                            <span className="text-violet-400 mr-2">&gt;</span>
+                            <span className="bg-gradient-to-r from-white via-indigo-100 to-indigo-300 bg-clip-text text-transparent">
+                                {displayedText}
+                            </span>
+                            <span
+                                className="inline-block w-2.5 sm:w-3 h-6 sm:h-8 ml-1.5 bg-gradient-to-b from-violet-400 to-blue-500 animate-cursor-blink rounded-xs"
+                                aria-hidden="true"
+                            />
                         </h1>
-                    </div>
 
-                    <p className="text-base sm:text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
-                        {t('hero.description')}
-                    </p>
+                        <p className="text-slate-300 font-sans text-xs sm:text-sm mt-3 mb-5 max-w-2xl">
+                            {t('hero.description')}
+                        </p>
 
-                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
-                        <a
-                            href="#projects"
-                            className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-all duration-300 shadow-lg shadow-blue-200/50 dark:shadow-none hover:shadow-blue-300 transform hover:-translate-y-1 flex items-center justify-center gap-2 text-sm sm:text-base cursor-pointer"
-                        >
-                            <span>{t('hero.work')}</span>
-                            <ArrowDown className="w-4 h-4 sm:w-5 sm:h-5 animate-bounce" />
-                        </a>
-                        <a
-                            href="#contact"
-                            className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 font-semibold hover:bg-slate-50 dark:hover:bg-slate-700 hover:border-slate-300 transition-all duration-300 shadow-sm hover:shadow-md flex items-center justify-center gap-2 text-sm sm:text-base cursor-pointer"
-                        >
-                            {t('hero.talk')}
-                        </a>
-                    </div>
-
-                    <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-3">
-                        <a
-                            href={profileData.personal.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="GitHub"
-                            className="p-2.5 sm:p-3 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white hover:shadow-md transition-all duration-300"
-                        >
-                            <Github className="w-5 h-5 sm:w-6 sm:h-6" />
-                        </a>
-                        <a
-                            href={profileData.personal.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="LinkedIn"
-                            className="p-2.5 sm:p-3 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-blue-900/30 hover:text-blue-600 dark:hover:text-blue-400 hover:shadow-md transition-all duration-300"
-                        >
-                            <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />
-                        </a>
-
-                        {/* Auto-generated PDF download button */}
-                        <div className="pl-1 sm:pl-2 border-l border-slate-200 dark:border-slate-700">
-                            <DownloadCVButton variant="secondary" className="!text-xs sm:!text-sm" />
+                        {/* 4 Instant Recruiter Highlights */}
+                        <div className="flex flex-wrap gap-2">
+                            {quickStats.map((stat, i) => (
+                                <span
+                                    key={i}
+                                    className="px-3 py-1 rounded-lg bg-white/[0.04] border border-white/10 text-indigo-200 text-xs font-mono font-medium"
+                                >
+                                    {stat}
+                                </span>
+                            ))}
                         </div>
                     </div>
                 </div>
 
-                {/* Decorative elements */}
-                <div className="absolute top-0 right-0 -mr-20 -mt-20 w-72 h-72 sm:w-96 sm:h-96 bg-blue-100/40 dark:bg-blue-900/10 rounded-full blur-3xl opacity-30 -z-10 animate-pulse"></div>
-                <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-64 h-64 sm:w-80 sm:h-80 bg-indigo-100/40 dark:bg-indigo-900/10 rounded-full blur-3xl opacity-30 -z-10 animate-pulse delay-700"></div>
+                {/* 5 Circular Social & CV Buttons ("o o o o o") */}
+                <div className="flex items-center justify-center gap-3.5 sm:gap-4 mb-8">
+                    <a
+                        href={p.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub"
+                        title="GitHub"
+                        className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/[0.04] hover:bg-gradient-to-br hover:from-violet-600 hover:to-blue-600 text-slate-200 hover:text-white border border-white/15 hover:border-indigo-400 flex items-center justify-center transition-all duration-200 hover:-translate-y-0.5"
+                    >
+                        <Github className="w-5 h-5" />
+                    </a>
+
+                    <a
+                        href={p.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn"
+                        title="LinkedIn"
+                        className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/[0.04] hover:bg-gradient-to-br hover:from-violet-600 hover:to-blue-600 text-slate-200 hover:text-white border border-white/15 hover:border-indigo-400 flex items-center justify-center transition-all duration-200 hover:-translate-y-0.5"
+                    >
+                        <Linkedin className="w-5 h-5" />
+                    </a>
+
+                    <a
+                        href="https://wa.me/584142435600"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="WhatsApp"
+                        title="WhatsApp"
+                        className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/[0.04] hover:bg-gradient-to-br hover:from-violet-600 hover:to-blue-600 text-slate-200 hover:text-white border border-white/15 hover:border-indigo-400 flex items-center justify-center transition-all duration-200 hover:-translate-y-0.5"
+                    >
+                        <MessageCircle className="w-5 h-5" />
+                    </a>
+
+                    <a
+                        href={`mailto:${p.email}`}
+                        aria-label="Email"
+                        title={p.email}
+                        className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/[0.04] hover:bg-gradient-to-br hover:from-violet-600 hover:to-blue-600 text-slate-200 hover:text-white border border-white/15 hover:border-indigo-400 flex items-center justify-center transition-all duration-200 hover:-translate-y-0.5"
+                    >
+                        <Mail className="w-5 h-5" />
+                    </a>
+
+                    <DownloadCVButton variant="circle" className="!w-11 !h-11 sm:!w-12 sm:!h-12" />
+                </div>
+
+                {/* Primary CTAs */}
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto">
+                    <a
+                        href="#projects"
+                        className="w-full sm:flex-1 px-6 py-3.5 rounded-xl bg-gradient-to-r from-violet-600 via-indigo-600 to-blue-600 hover:from-violet-500 hover:to-blue-500 text-white font-semibold transition-all shadow-lg shadow-indigo-600/25 border border-white/15 flex items-center justify-center gap-2 text-sm"
+                    >
+                        <span>{t('hero.work')}</span>
+                        <ArrowDown className="w-4 h-4" />
+                    </a>
+
+                    <a
+                        href="#mentorship"
+                        className="w-full sm:flex-1 px-6 py-3.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.09] text-white border border-white/15 font-semibold transition-all flex items-center justify-center gap-2 text-sm"
+                    >
+                        <Sparkles className="w-4 h-4 text-violet-400" />
+                        <span>{t('hero.talk')}</span>
+                    </a>
+                </div>
             </div>
         </section>
     );

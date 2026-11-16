@@ -11,7 +11,8 @@ export const projects = [
         link: '#',
         isNDA: true,
         company: 'THEEGG / Mailamericas',
-        role: 'Tech Lead Frontend'
+        role: 'Tech Lead Frontend',
+        metrics: '+12 Países • 3,000 paq/saca • 0 Regresiones'
     },
     {
         id: 2,
@@ -23,7 +24,8 @@ export const projects = [
         link: '#',
         isNDA: true,
         company: 'THEEGG / Mailamericas',
-        role: 'Tech Lead Frontend'
+        role: 'Tech Lead Frontend',
+        metrics: 'Escaneo Láser <50ms • Operación 24/7 en Planta'
     },
     {
         id: 3,
@@ -35,7 +37,8 @@ export const projects = [
         link: '#',
         isNDA: true,
         company: 'THEEGG / Mailamericas',
-        role: 'Frontend Lead'
+        role: 'Frontend Lead',
+        metrics: 'Clasificación Automatizada • Motor de Reglas'
     },
     {
         id: 4,
@@ -47,6 +50,7 @@ export const projects = [
         link: '#',
         isNDA: false,
         company: 'Wapidelo (Panamá)',
-        role: 'Frontend Developer (Freelance / Contractor)'
+        role: 'Senior Frontend Developer (Contractor)',
+        metrics: 'Alto Tráfico Black Friday • Checkout a WhatsApp'
     }
 ];

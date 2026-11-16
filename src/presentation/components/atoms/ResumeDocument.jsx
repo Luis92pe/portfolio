@@ -1,14 +1,5 @@
 import React from 'react';
-import { Document, Page, Text, View, StyleSheet, Font, Link } from '@react-pdf/renderer';
-
-// Register standard fonts
-Font.register({
-    family: 'Helvetica',
-    fonts: [
-        { src: 'https://cdn.jsdelivr.net/npm/@canvas-fonts/helvetica@1.0.4/Helvetica.ttf' },
-        { src: 'https://cdn.jsdelivr.net/npm/@canvas-fonts/helvetica-bold@1.0.4/Helvetica-Bold.ttf', fontWeight: 'bold' }
-    ]
-});
+import { Document, Page, Text, View, StyleSheet, Link } from '@react-pdf/renderer';
 
 const styles = StyleSheet.create({
     page: {
@@ -17,43 +8,48 @@ const styles = StyleSheet.create({
         paddingHorizontal: 32,
         fontFamily: 'Helvetica',
         fontSize: 8.5,
-        lineHeight: 1.35,
         color: '#1e293b'
     },
     header: {
         borderBottomWidth: 1.5,
-        borderBottomColor: '#2563eb',
+        borderBottomColor: '#4f46e5',
         paddingBottom: 10,
         marginBottom: 10
     },
+    nameWrapper: {
+        marginBottom: 5
+    },
     name: {
         fontSize: 20,
-        fontWeight: 'bold',
+        fontFamily: 'Helvetica-Bold',
         color: '#0f172a',
-        letterSpacing: -0.3
+        lineHeight: 1.2
+    },
+    roleWrapper: {
+        marginBottom: 6
     },
     role: {
         fontSize: 10,
-        fontWeight: 'bold',
-        color: '#2563eb',
-        marginTop: 2,
-        marginBottom: 5,
+        fontFamily: 'Helvetica-Bold',
+        color: '#4f46e5',
         textTransform: 'uppercase',
-        letterSpacing: 0.5
+        letterSpacing: 0.5,
+        lineHeight: 1.25
     },
     contactRow: {
         flexDirection: 'row',
         flexWrap: 'wrap',
-        gap: 10,
+        gap: 8,
         fontSize: 8,
-        color: '#475569'
+        color: '#475569',
+        lineHeight: 1.3
     },
     contactItem: {
         flexDirection: 'row',
         alignItems: 'center'
     },
     contactLink: {
-        color: '#2563eb',
+        color: '#4f46e5',
         textDecoration: 'none'
     },
     pageIndicator: {
@@ -68,14 +64,15 @@ const styles = StyleSheet.create({
     },
     sectionTitle: {
         fontSize: 9.5,
-        fontWeight: 'bold',
+        fontFamily: 'Helvetica-Bold',
         color: '#0f172a',
         textTransform: 'uppercase',
         letterSpacing: 0.7,
         borderBottomWidth: 1,
         borderBottomColor: '#e2e8f0',
-        paddingBottom: 2.5,
-        marginBottom: 5
+        paddingBottom: 3,
+        marginBottom: 6,
+        lineHeight: 1.2
     },
     summaryText: {
         fontSize: 8,
@@ -89,22 +86,26 @@ const styles = StyleSheet.create({
         padding: 6,
         borderRadius: 4,
         borderLeftWidth: 2.5,
-        borderLeftColor: '#2563eb'
+        borderLeftColor: '#4f46e5'
     },
     projectHeader: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        alignItems: 'flex-start'
+        alignItems: 'flex-start',
+        marginBottom: 2
     },
     projectTitle: {
-        fontSize: 8.5,
-        fontWeight: 'bold',
-        color: '#0f172a'
+        fontSize: 8.8,
+        fontFamily: 'Helvetica-Bold',
+        color: '#0f172a',
+        lineHeight: 1.25,
+        marginBottom: 1
     },
     projectMeta: {
         fontSize: 7.5,
-        fontWeight: 'bold',
-        color: '#2563eb'
+        fontFamily: 'Helvetica-Bold',
+        color: '#4f46e5',
+        lineHeight: 1.25
     },
     projectDate: {
         fontSize: 7.5,
@@ -114,7 +115,7 @@ const styles = StyleSheet.create({
         fontSize: 7.8,
         color: '#334155',
         marginTop: 2,
-        lineHeight: 1.3
+        lineHeight: 1.35
     },
     experienceItem: {
         marginBottom: 7
@@ -122,17 +123,21 @@ const styles = StyleSheet.create({
     jobHeader: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        alignItems: 'flex-start'
+        alignItems: 'flex-start',
+        marginBottom: 1.5
     },
     jobTitle: {
         fontSize: 8.8,
-        fontWeight: 'bold',
-        color: '#0f172a'
+        fontFamily: 'Helvetica-Bold',
+        color: '#0f172a',
+        lineHeight: 1.25,
+        marginBottom: 1
     },
     company: {
         fontSize: 8,
-        fontWeight: 'bold',
-        color: '#2563eb'
+        fontFamily: 'Helvetica-Bold',
+        color: '#4f46e5',
+        lineHeight: 1.25
     },
     period: {
         fontSize: 7.5,
@@ -142,20 +147,20 @@ const styles = StyleSheet.create({
         fontSize: 7.8,
         color: '#334155',
         marginTop: 1.5,
-        lineHeight: 1.3
+        lineHeight: 1.35
     },
     techTags: {
         flexDirection: 'row',
         flexWrap: 'wrap',
         gap: 3,
-        marginTop: 2.5
+        marginTop: 3
     },
     techTag: {
         fontSize: 7,
         backgroundColor: '#f1f5f9',
         color: '#334155',
         paddingHorizontal: 4,
-        paddingVertical: 1,
+        paddingVertical: 1.5,
         borderRadius: 2.5
     },
     twoCol: {
@@ -167,30 +172,32 @@ const styles = StyleSheet.create({
     },
     bulletItem: {
         flexDirection: 'row',
-        marginBottom: 2.5
+        marginBottom: 3
     },
     bulletDot: {
         width: 8,
         fontSize: 7.5,
-        color: '#2563eb'
+        color: '#4f46e5'
     },
     bulletText: {
         fontSize: 7.8,
         color: '#334155',
         flex: 1,
-        lineHeight: 1.25
+        lineHeight: 1.3
     },
     eduItem: {
         marginBottom: 4
     },
     eduDegree: {
         fontSize: 8,
-        fontWeight: 'bold',
-        color: '#0f172a'
+        fontFamily: 'Helvetica-Bold',
+        color: '#0f172a',
+        lineHeight: 1.25
     },
     eduInstitution: {
         fontSize: 7.5,
-        color: '#475569'
+        color: '#475569',
+        lineHeight: 1.25
     }
 });
 
@@ -204,8 +211,12 @@ export const ResumeDocument = ({ lang = 'es', profile, career, projects }) => {
             <Page size="A4" style={styles.page}>
                 {/* Header */}
                 <View style={styles.header}>
-                    <Text style={styles.name}>{p.personal.fullName}</Text>
-                    <Text style={styles.role}>{p.personal.title}</Text>
+                    <View style={styles.nameWrapper}>
+                        <Text style={styles.name}>{p.personal.fullName}</Text>
+                    </View>
+                    <View style={styles.roleWrapper}>
+                        <Text style={styles.role}>{p.personal.title}</Text>
+                    </View>
                     <View style={styles.contactRow}>
                         <Text style={styles.contactItem}>{p.personal.location}</Text>
                         <Text style={styles.contactItem}>•</Text>
@@ -215,7 +226,7 @@ export const ResumeDocument = ({ lang = 'es', profile, career, projects }) => {
                         <Text style={styles.contactItem}>•</Text>
                         <Link src={p.personal.github} style={styles.contactLink}>github.com/luis92pe</Link>
                         <Text style={styles.contactItem}>•</Text>
-                        <Link src={p.personal.linkedin} style={styles.contactLink}>linkedin.com/in/luis92pe</Link>
+                        <Link src={p.personal.linkedin} style={styles.contactLink}>linkedin.com/in/lpena92</Link>
                     </View>
                 </View>
 
@@ -236,7 +247,7 @@ export const ResumeDocument = ({ lang = 'es', profile, career, projects }) => {
                     </Text>
                     <View style={styles.twoCol}>
                         <View style={styles.col}>
-                            <Text style={{ fontSize: 7.5, fontWeight: 'bold', color: '#475569', marginBottom: 2 }}>
+                            <Text style={{ fontSize: 7.5, fontFamily: 'Helvetica-Bold', color: '#475569', marginBottom: 2 }}>
                                 {isEs ? 'Frontend & Mobile:' : 'Frontend & Mobile:'}
                             </Text>
                             <View style={styles.techTags}>
@@ -249,7 +260,7 @@ export const ResumeDocument = ({ lang = 'es', profile, career, projects }) => {
                             </View>
                         </View>
                         <View style={styles.col}>
-                            <Text style={{ fontSize: 7.5, fontWeight: 'bold', color: '#475569', marginBottom: 2 }}>
+                            <Text style={{ fontSize: 7.5, fontFamily: 'Helvetica-Bold', color: '#475569', marginBottom: 2 }}>
                                 {isEs ? 'Arquitectura, Hardware & Real-time:' : 'Architecture, Hardware & Real-time:'}
                             </Text>
                             <View style={styles.techTags}>
@@ -296,7 +307,7 @@ export const ResumeDocument = ({ lang = 'es', profile, career, projects }) => {
                 {/* Mini Header de Continuación */}
                 <View style={[styles.header, { paddingBottom: 6, marginBottom: 8 }]}>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <Text style={[styles.name, { fontSize: 13 }]}>{p.personal.fullName}</Text>
+                        <Text style={{ fontSize: 12, fontFamily: 'Helvetica-Bold', color: '#0f172a' }}>{p.personal.fullName}</Text>
                         <Text style={{ fontSize: 7.5, color: '#64748b' }}>{p.personal.email} • {p.personal.phone}</Text>
                     </View>
                 </View>
@@ -348,10 +359,10 @@ export const ResumeDocument = ({ lang = 'es', profile, career, projects }) => {
                             <Text style={styles.sectionTitle}>
                                 {isEs ? 'Fundamentos & Libros Clave' : 'Foundations & Core Readings'}
                             </Text>
-                            <Text style={{ fontSize: 7.5, color: '#334155' }}>
+                            <Text style={{ fontSize: 7.5, color: '#334155', lineHeight: 1.35 }}>
                                 • Clean Architecture (R. Martin) — {isEs ? 'Aislamiento de dominio de frameworks/DB' : 'Domain isolated from frameworks/DBs'}
                             </Text>
-                            <Text style={{ fontSize: 7.5, color: '#334155', marginTop: 1.5 }}>
+                            <Text style={{ fontSize: 7.5, color: '#334155', marginTop: 2, lineHeight: 1.35 }}>
                                 • The Pragmatic Programmer (D. Thomas & A. Hunt) — {isEs ? 'Mentalidad DRY y código ortogonal' : 'DRY mindset & orthogonal systems'}
                             </Text>
                         </View>
@@ -360,10 +371,10 @@ export const ResumeDocument = ({ lang = 'es', profile, career, projects }) => {
                             <Text style={styles.sectionTitle}>
                                 {isEs ? 'Idiomas' : 'Languages'}
                             </Text>
-                            <Text style={{ fontSize: 7.8, color: '#334155' }}>
+                            <Text style={{ fontSize: 7.8, color: '#334155', lineHeight: 1.35 }}>
                                 • {p.skills.languages.es}
                             </Text>
-                            <Text style={{ fontSize: 7.8, color: '#334155', marginTop: 2 }}>
+                            <Text style={{ fontSize: 7.8, color: '#334155', marginTop: 2, lineHeight: 1.35 }}>
                                 • {p.skills.languages.en}
                             </Text>
                         </View>

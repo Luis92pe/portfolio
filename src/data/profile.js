@@ -6,7 +6,7 @@ export const profileData = {
         email: 'luis92pe@gmail.com',
         phone: '+58 414 243 5600',
         github: 'https://github.com/luis92pe',
-        linkedin: 'https://linkedin.com/in/luis92pe',
+        linkedin: 'https://www.linkedin.com/in/lpena92/',
         yearsOfExperience: '11+',
         careerStartYear: '2013'
     },

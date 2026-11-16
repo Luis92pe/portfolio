@@ -2,92 +2,40 @@ import React from 'react';
 import Navbar from '../../components/organisms/Navbar';
 import Hero from '../../components/organisms/Hero';
 import ProjectsSection from '../../components/organisms/ProjectsSection';
-import BooksSection from '../../components/organisms/BooksSection';
 import TimelineSection from '../../components/organisms/TimelineSection';
-import SkillsSection from '../../components/organisms/SkillsSection';
+import MentorshipSection from '../../components/organisms/MentorshipSection';
 import ContactSection from '../../components/organisms/ContactSection';
-import StoryBridge from '../../components/atoms/StoryBridge';
 import ArchitectureScrollBg from '../../components/atoms/ArchitectureScrollBg';
 import FadeIn from '../../components/atoms/FadeIn';
-import { Briefcase, BookOpen, GitBranch, MessageSquareQuote } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
 
 const HomePage = () => {
-    const { t } = useTranslation();
-
     return (
-        <div className="min-h-screen bg-white dark:bg-slate-900 transition-colors selection:bg-blue-500 selection:text-white relative">
-            {/* Capas interactivas de Clean Architecture y Engranes animados por Scroll */}
+        <div className="min-h-screen bg-[#05050A] text-white selection:bg-violet-600 selection:text-white relative">
             <ArchitectureScrollBg />
 
             <Navbar />
-            <main>
-                {/* 1. Hook Conversacional */}
+            <main className="relative z-10">
+                {/* 1. Hero: Cargo/Experiencia tipeado + 4 Stats + 5 Redes */}
                 <FadeIn>
                     <Hero />
                 </FadeIn>
 
-                {/* Puente: El Trabajo Primero */}
-                <FadeIn>
-                    <StoryBridge
-                        title={t('story.bridge_1.title')}
-                        quote={t('story.bridge_1.quote')}
-                        nextSectionId="#projects"
-                        icon={Briefcase}
-                    />
-                </FadeIn>
-
-                {/* 2. El Trabajo Primero (Proyectos en +12 países) */}
+                {/* 2. Proyectos Clave (2x2 Grid -> Transición animada al detalle) */}
                 <FadeIn>
                     <ProjectsSection />
                 </FadeIn>
 
-                {/* Puente: Criterio & Filosofía */}
-                <FadeIn>
-                    <StoryBridge
-                        title={t('story.bridge_2.title')}
-                        quote={t('story.bridge_2.quote')}
-                        nextSectionId="#books"
-                        icon={BookOpen}
-                    />
-                </FadeIn>
-
-                {/* 3. La Filosofía (Club de Lectura / Libros Clave) */}
-                <FadeIn>
-                    <BooksSection />
-                </FadeIn>
-
-                {/* Puente: El Camino Recorrido */}
-                <FadeIn>
-                    <StoryBridge
-                        title={t('story.bridge_3.title')}
-                        quote={t('story.bridge_3.quote')}
-                        nextSectionId="#career"
-                        icon={GitBranch}
-                    />
-                </FadeIn>
-
-                {/* 4. La Trayectoria (Git Log Timeline) */}
+                {/* 3. Resumen para Reclutadores: Stack Puntual & Experiencia */}
                 <FadeIn>
                     <TimelineSection />
                 </FadeIn>
 
-                {/* 5. Habilidades Técnicas & Quién Soy a Fondo */}
+                {/* 4. Packs de Mentorías & Bolsa de Horas */}
                 <FadeIn>
-                    <SkillsSection />
+                    <MentorshipSection />
                 </FadeIn>
 
-                {/* Puente: Punto de Encuentro */}
-                <FadeIn>
-                    <StoryBridge
-                        title={t('story.bridge_4.title')}
-                        quote={t('story.bridge_4.quote')}
-                        nextSectionId="#contact"
-                        icon={MessageSquareQuote}
-                    />
-                </FadeIn>
-
-                {/* 6. Punto de Encuentro & Contacto Directo */}
+                {/* 5. Contacto Directo + Mi CV para nuevos empleos */}
                 <FadeIn>
                     <ContactSection />
                 </FadeIn>

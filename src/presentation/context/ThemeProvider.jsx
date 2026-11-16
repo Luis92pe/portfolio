@@ -3,32 +3,17 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-    const [theme, setTheme] = useState(() => {
-        // Check local storage or system preference on initial load
-        if (typeof window !== 'undefined') {
-            const storedTheme = window.localStorage.getItem('theme');
-            if (storedTheme) {
-                return storedTheme;
-            }
-            return window.matchMedia('(prefers-color-scheme: dark)').matches
-                ? 'dark'
-                : 'light';
-        }
-        return 'light'; // Default fallback
-    });
+    const [theme, setTheme] = useState('dark');
 
     useEffect(() => {
-        // Apply theme to HTML root element
         const root = window.document.documentElement;
         root.classList.remove('light', 'dark');
-        root.classList.add(theme);
-
-        // Persist choice
-        window.localStorage.setItem('theme', theme);
+        root.classList.add('dark');
+        window.localStorage.setItem('theme', 'dark');
     }, [theme]);
 
     const toggleTheme = () => {
-        setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+        setTheme('dark');
     };
 
     return (

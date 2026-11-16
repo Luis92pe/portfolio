@@ -1,121 +1,204 @@
 {
     "navbar": {
-        "home": "Inicio",
         "projects": "Proyectos",
-        "skills": "Habilidades",
-        "books": "Lecturas",
-        "contact": "Contacto"
+        "experience": "Experiencia",
+        "mentorship": "Mentorías",
+        "contact": "Contacto",
+        "cv_short": "CV PDF"
     },
     "hero": {
-        "available": "Disponible para nuevos retos de liderazgo técnico",
-        "greeting": "Hola, soy Luis Peña 👋",
-        "building": "Construyo",
-        "experiences": "sistemas de misión crítica",
-        "digital": "y arquitectura escalable.",
-        "description": "Tech Lead Frontend con 11+ años de trayectoria en operaciones de alta exigencia. Antes de hablarte de títulos o biografías, prefiero mostrarte lo que he construido en producción para más de 12 países.",
-        "talk": "Hablemos",
-        "work": "Ver mi trabajo primero ↓",
-        "download_cv": "Descargar CV (PDF)",
-        "generating_cv": "Generando CV..."
+        "available": "Disponible • Remoto Global • Tech Lead / Senior Frontend",
+        "editor_file": "luis-pena.ts",
+        "role_label": "Tech Lead Frontend • 11+ Años de Experiencia",
+        "typing_lines": [
+            "Tech Lead Frontend (11+ años de exp.)",
+            "React • Vue • React Native • Electron",
+            "Clean Architecture & sistemas en +12 países",
+            "Liderazgo técnico, IA aplicada y 0 regresiones"
+        ],
+        "description": "Especialista en sistemas de misión crítica, logística internacional e integración con hardware industrial.",
+        "quick_stats": [
+            "11+ Años Exp.",
+            "+12 Países en Prod.",
+            "Clean Architecture",
+            "React • Vue • RN"
+        ],
+        "work": "Ver Proyectos",
+        "talk": "Packs de Horas / Mentoría",
+        "download_cv": "Mi CV para nuevos empleos",
+        "generating_cv": "Generando..."
     },
-    "story": {
-        "bridge_1": {
-            "title": "El trabajo habla primero",
-            "quote": "Antes de hablar de mí o de mi biografía, prefiero que veas lo que he construido. En logística internacional, un error detiene camiones, almacenes y vuelos. Estos son los sistemas de misión crítica que he liderado en producción:"
-        },
-        "bridge_2": {
-            "title": "Criterio sobre sintaxis",
-            "quote": "Construir software para 12 países no se logra copiando sintaxis. En la era de la IA generativa, el verdadero valor de un Tech Lead está en saber aislar el dominio, gestionar la complejidad y diseñar arquitecturas limpias que perduren en el tiempo."
-        },
-        "bridge_3": {
-            "title": "El camino recorrido",
-            "quote": "Ahora que conoces qué hago y cómo pienso, te comparto el camino que recorrí para llegar hasta aquí: más de una década de evolución continua desde mis primeros proyectos independientes en 2013."
-        },
-        "bridge_4": {
-            "title": "¿Hablamos de tu proyecto?",
-            "quote": "Si buscas a alguien que lidere técnicamente con arquitectura limpia, cuide la calidad con code reviews y conecte Figma con producción sin fricción... conversemos."
-        }
+    "projects_section": {
+        "title_small": "Producción Real",
+        "title_large": "Proyectos Clave",
+        "description": "Toca cualquier proyecto para ver su arquitectura, mi rol e integración con IA.",
+        "tap_hint": "Ver detalle →",
+        "back_to_grid": "Volver",
+        "description_label": "Descripción & Impacto",
+        "stack_label": "Stack",
+        "features_role_label": "Features & Mi Rol",
+        "ai_usage_label": "Cómo uso la IA en desarrollo"
     },
-    "skills_section": {
-        "about_me": "Sobre Mí & Habilidades",
-        "title_part1": "Frontend Lead con",
-        "title_part2": "visión de arquitectura y resiliencia",
-        "bio1": "Con más de una década en la ingeniería de software, me especializo en <1>Frontend Architecture</1> y el diseño de sistemas de alta criticidad donde el rendimiento y la estabilidad son innegociables.",
-        "bio2": "Lidero equipos impulsando <1>Clean Architecture y Atomic Design</1> para garantizar cero regresiones en producción. Experiencia extensa integrando hardware industrial (balanzas volumétricas, impresoras térmicas, terminales Honeywell PDA) y WebSockets. Certificado en UX/UI con dominio avanzado de <3>Figma</3> para cerrar la brecha entre diseño y código de producción.",
-        "tech_skills": "Habilidades Técnicas",
-        "certified": "Certificado",
-        "certificates": [
-            "Diseño UX/UI Profesional - Acámica (2019)",
-            "Vue.js Profesional & Básico - Platzi (2018)",
-            "Design Patterns for Software - Udemy (2018)",
-            "Desarrollo de Apps - Universidad Complutense de Madrid (2015)",
-            "Gamificación de Videojuegos - European University (2014)"
+    "mentorship_section": {
+        "badge": "Contratación Directa",
+        "title": "Packs de Mentorías & Horas",
+        "subtitle": "Contrátame por horas o sesiones puntuales para destrabar arquitectura, auditar código o liderar features.",
+        "popular": "Más Solicitado",
+        "packs": [
+            {
+                "id": "session-1on1",
+                "tag": "Sesión Flash",
+                "name": "Mentoría 1:1 & Code Audit",
+                "hours": "2 Horas",
+                "target": "Devs & Tech Leads",
+                "description": "Diagnóstico directo sobre tu código o preparación técnica para roles Senior/Lead.",
+                "features": [
+                    "Auditoría Clean Architecture / FSD",
+                    "Pair programming & refactoring en vivo",
+                    "Flujo de trabajo con agentes de IA",
+                    "Hoja de ruta técnica + grabación"
+                ],
+                "ctaText": "Agendar 2 Horas",
+                "whatsappMsg": "Hola Luis, me interesa contratar el Pack de Sesión 1:1 & Code Audit (2 Horas)."
+            },
+            {
+                "id": "mentorship-pack",
+                "tag": "Pack Aceleración",
+                "name": "Mentoría Continua & Arquitectura",
+                "hours": "10 Horas",
+                "target": "Devs o Equipos",
+                "description": "Acompañamiento práctico en arquitectura escalable, sistemas de diseño y calidad de entregas.",
+                "features": [
+                    "5 sesiones de 2h + seguimiento en PRs",
+                    "Dominio desacoplado & Atomic Design",
+                    "De Figma a componentes de producción",
+                    "Code Reviews con estándar 0 regresiones"
+                ],
+                "ctaText": "Contratar 10 Horas",
+                "whatsappMsg": "Hola Luis, me interesa contratar el Pack de Mentoría Continua & Arquitectura (10 Horas)."
+            },
+            {
+                "id": "engineering-retainer",
+                "tag": "Bolsa Mensual",
+                "name": "Fractional Tech Lead / Dev",
+                "hours": "20h - 40h",
+                "target": "Empresas & Startups",
+                "description": "Liderazgo técnico e implementación directa de features críticas en tu producto.",
+                "features": [
+                    "Desarrollo en React, Vue, RN o Electron",
+                    "Integración APIs, WebSockets y Hardware",
+                    "Estandarización técnica de tu equipo",
+                    "Alineación directa con Producto y UX/UI"
+                ],
+                "ctaText": "Contratar Bolsa de Horas",
+                "whatsappMsg": "Hola Luis, nos interesa contratar una Bolsa de Horas / Consultoría como Tech Lead Frontend."
+            }
         ]
     },
     "timeline_section": {
-        "title": "Trayectoria",
-        "subtitle": "Git Log",
-        "description": "Evolución profesional continua desde finales de 2013: freelance, desarrollador de sistemas corporativos y Tech Lead Frontend en logística internacional."
+        "title": "Resumen para Reclutadores",
+        "subtitle": "Experiencia & Stack",
+        "stack_categories": [
+            {
+                "label": "Core Frontend",
+                "items": ["React", "Vue.js 2 & 3", "TypeScript", "JavaScript ES6+", "Next.js", "Tailwind CSS"]
+            },
+            {
+                "label": "Mobile, Desktop & Hardware",
+                "items": ["React Native", "Electron", "Honeywell PDA", "WebSockets", "Impresoras QueBeu", "Balanzas"]
+            },
+            {
+                "label": "Arquitectura & Liderazgo",
+                "items": ["Clean Architecture", "Atomic Design", "Feature-Sliced Design", "Figma UX/UI", "Code Reviews", "AI Workflows"]
+            }
+        ]
     },
-    "projects_section": {
-        "title_small": "Casos de Éxito",
-        "title_large": "Proyectos & Sistemas Clave",
-        "description": "Sistemas implementados en producción para entornos de alta demanda operativa, logística internacional y comercio electrónico.",
-        "all_filter": "Todos",
-        "empty": "No hay proyectos con esta tecnología."
-    },
-    "books_section": {
-        "title_small": "Fundamentos & Criterio",
-        "title_large": "Club de Lectura / Libros Clave",
-        "description": "En la era de la IA generativa, escribir código de memoria es secundario: el verdadero valor de un Tech Lead está en comprender principios profundos de diseño, arquitectura y gestión de la complejidad."
+    "contact_section": {
+        "badge": "Contacto Directo",
+        "title": "Contacto",
+        "subtitle": "Respuesta rápida para propuestas laborales, consultoría o packs de horas.",
+        "bars": {
+            "whatsapp_label": "WhatsApp",
+            "whatsapp_action": "Escribir ahora",
+            "email_label": "Email",
+            "email_action": "Enviar correo",
+            "linkedin_label": "LinkedIn",
+            "linkedin_action": "Ver perfil"
+        },
+        "cv_button": "Mi CV para nuevos empleos",
+        "back_top": "Subir al inicio"
     },
     "data": {
         "career": {
             "1": {
-                "title": "Tech Lead Frontend & Specialist",
-                "description": "Liderazgo técnico del equipo frontend para Mailamericas. Dirección de arquitectura para el ecosistema de almacenes operando en más de 12 países (Fulfillment Desktop/Web, PDA industriales Honeywell, Sorting de clasificación masiva y Correos App / MaGo). Adopción pionera de Clean Architecture y Atomic Design modular para erradicar regresiones en producción. Mentoría y code reviews exigentes."
+                "title": "Tech Lead Frontend",
+                "description": "Liderazgo técnico para Mailamericas en +12 países (Fulfillment Web/Desktop, Honeywell PDA y Sorting). Migración a Clean Architecture con 0 regresiones."
             },
             "2": {
                 "title": "Senior Frontend Developer (Contractor)",
-                "description": "Desarrollo de plataforma e-commerce multi-tienda como contractor independiente para el mercado panameño. Implementación de un motor reactivo de filtros condicionales avanzados para campañas masivas (Black Friday), gestión del estado con Vuex y automatización del flujo de compra hacia WhatsApp."
+                "description": "Plataforma e-commerce multi-tienda con filtros reactivos para alto tráfico (Black Friday), estado en Vuex y despacho automático a WhatsApp."
             },
             "3": {
                 "title": "Semi-Senior Full Stack Developer",
-                "description": "Desarrollo de soluciones corporativas empresariales. Implementación de plataforma para el sector de hipismo en Python/Django, resolución bajo presión de módulos críticos de impresión en tiempo real y mantenimiento de servicios en Java, AngularJS y Laravel."
+                "description": "Sistemas corporativos e impresión de tickets en tiempo real bajo alta demanda con Python/Django, Java, AngularJS y Laravel."
             },
             "4": {
-                "title": "Frontend Developer (Freelance)",
-                "description": "Desarrollo e integración como freelancer del módulo de usuarios, autenticación y vistas interactivas en Angular y Laravel desplegado en Heroku."
-            },
-            "5": {
-                "title": "Analista Programador Web & PHP",
-                "description": "Ingeniería del sistema integral de gestión para operaciones de Call Center enfocado en mora y cobranzas. Monitoreo en tiempo real de teleoperadores, panel analítico con métricas de llamadas y reportería ejecutiva."
-            },
-            "6": {
-                "title": "Desarrollador Web / WordPress",
-                "description": "Inicio de trayectoria profesional a finales de 2013 creando soluciones web a medida, plugins personalizados y maquetación frontend/backend para clientes comerciales."
-            },
-            "7": {
-                "title": "Ingeniería en Informática & T.S.U.",
-                "description": "Graduación como Técnico Superior Universitario en 2013 y posterior obtención del título de Ingeniero en Informática en 2017, consolidando bases sólidas en ingeniería de software, estructuras de datos y arquitectura."
+                "title": "Analista Programador & Frontend (Inicios)",
+                "description": "Desarrollo de plataformas de Call Center en tiempo real, módulos de autenticación en Angular/Laravel y soluciones web desde 2013."
             }
         },
         "projects": {
             "1": {
-                "title": "Fulfillment Warehouse Logistics Suite",
-                "description": "Suite de escritorio y web de misión crítica para almacenes logísticos de Mailamericas en más de 12 países (Argentina, Perú, Jamaica, Seychelles, etc.). Control de paquetería de alto volumen (sacas de hasta 3,000 paquetes), balanzas volumétricas, WebSockets e impresión térmica con QueBeu. Arquitectura desacoplada con Clean Architecture y Atomic Design."
+                "title": "Fulfillment Warehouse Suite",
+                "short_desc": "Suite logística desktop/web en +12 países conectada a balanzas e impresoras térmicas.",
+                "description": "Sistema de misión crítica en +12 países para Mailamericas. Procesa sacas de hasta 3,000 paquetes en tiempo real integrando balanzas físicas, WebSockets e impresoras térmicas.",
+                "role": "Tech Lead Frontend",
+                "features": [
+                    "Migración a Clean Architecture y Atomic Design (0 regresiones).",
+                    "Conexión por WebSockets con balanzas e impresoras QueBeu.",
+                    "Flujo crítico de pesaje, sacas (3,000 paq.) y despacho internacional.",
+                    "Liderazgo técnico, code reviews y alineación con Producto."
+                ],
+                "ai_workflow": "Generación de casos de uso desacoplados bajo Clean Architecture, simulación de payloads de hardware y validación automatizada de casos borde."
             },
             "2": {
-                "title": "Fulfillment PDA & Mobile Logistics",
-                "description": "Aplicación móvil en React Native para terminales industriales Honeywell en almacenes. Escaneo láser de códigos de barras/QR en sacas, contenedores y paquetería en tiempo real, sincronizando operaciones críticas de inventario con los servidores centrales."
+                "title": "Fulfillment PDA Mobile",
+                "short_desc": "App React Native en terminales láser Honeywell para operación en almacenes.",
+                "description": "App móvil industrial para lectores láser Honeywell. Sincroniza escaneos de sacas, contenedores y paquetes en menos de 50ms con servidores centrales.",
+                "role": "Tech Lead Mobile",
+                "features": [
+                    "Integración nativa con escáner láser Honeywell (<50ms).",
+                    "UI de alto contraste diseñada para operarios en planta.",
+                    "Sincronización en tiempo real y alertas sonoras/hápticas.",
+                    "Librería modular reutilizable con Styled Components."
+                ],
+                "ai_workflow": "Modelado de máquinas de estado de escaneo, análisis de rendimiento en Android industrial y generación de tests asíncronos."
             },
             "3": {
-                "title": "Sorting Engine & Rules Automation",
-                "description": "Plataforma frontend para creación de órdenes de trabajo, asignación de reglas de negocio y configuración de plantillas para maquinaria de sorteo industrial automatizado. Construida en React con APIs Nest.js y diseño centrado en el operador de planta."
+                "title": "Sorting Engine Automation",
+                "short_desc": "Configurador React + Nest.js de reglas de negocio para maquinaria de sorteo.",
+                "description": "Plataforma frontend para crear órdenes de trabajo y árboles de reglas que alimentan máquinas clasificadoras industriales automatizadas.",
+                "role": "Frontend Lead",
+                "features": [
+                    "Configurador visual de reglas (país, peso, aduana y courier).",
+                    "Diseño en Figma y traducción pixel-perfect a React.",
+                    "Validador preventivo de colisiones en reglas operativas.",
+                    "Adaptadores de dominio conectados a microservicios Nest.js."
+                ],
+                "ai_workflow": "Detección asistida de conflictos lógicos en árboles de reglas y conversión acelerada de especificaciones Figma a componentes tipados."
             },
             "4": {
-                "title": "Wapidelo E-Commerce Platform",
-                "description": "Plataforma e-commerce para Panamá con motor reactivo de filtros condicionales avanzados para ofertas de alto tráfico (Black Friday), gestión reactiva del estado con Vuex y embudo de conversión que envía pedidos automáticos a WhatsApp."
+                "title": "Wapidelo E-Commerce",
+                "short_desc": "E-commerce multi-tienda con filtros reactivos Black Friday y checkout a WhatsApp.",
+                "description": "Plataforma comercial en Panamá con motor reactivo de filtros combinados para alto tráfico y automatización de pedidos hacia WhatsApp.",
+                "role": "Senior Frontend",
+                "features": [
+                    "Motor reactivo de filtros instantáneos sin recarga de página.",
+                    "Estado global multi-tienda predecible con Vuex.",
+                    "Checkout automatizado directo al WhatsApp del comercio.",
+                    "Optimización Mobile-First para redes móviles."
+                ],
+                "ai_workflow": "Optimización de bundles, indexación de catálogos en cliente y pruebas de estrés en filtros combinados."
             }
         }
     }
